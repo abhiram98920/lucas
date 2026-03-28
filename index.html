@@ -283,21 +283,28 @@
 
     <!-- Flash Sale Banner -->
     <section class="flash-sale-banner">
-        <div class="container container-extra-wide">
+        <!-- Optional CSS Particle Effect Background -->
+        <div class="particle-bg"></div>
+        <img src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" class="floating-img float-1" alt="Decor">
+        <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" class="floating-img float-2" alt="Wood Carving">
+        <img src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" class="floating-img float-3" alt="Idol">
+        <div class="container container-extra-wide" style="position: relative; z-index: 2;">
             <div class="flash-content flex-between align-center">
                 <div class="flash-text">
-                    <h2><i class="fa-solid fa-bolt" style="color:#ffcc00; margin-right:10px;"></i> Flash Sale <span>| Exclusive Deals</span></h2>
-                    <p>Grab your premium handcrafted furniture before the offer ends.</p>
+                    <h2><i class="fa-solid fa-bolt" style="color:#ffcc00; margin-right:10px;"></i> Flash Sale <span style="color: #888; font-weight: 300; font-size: 1.2rem;">| Exclusive Deals</span></h2>
+                    <p style="color: #aaa; margin-top: 5px; font-size: 0.95rem;">Grab your premium handcrafted furniture before the offer ends.</p>
                 </div>
-                <div class="flash-timer" id="flashTimer">
-                    <span class="timer-label">Ends In:</span>
-                    <div class="time-block"><span id="f-hours">12</span><small>HRS</small></div>
-                    <span class="colon">:</span>
-                    <div class="time-block"><span id="f-minutes">45</span><small>MIN</small></div>
-                    <span class="colon">:</span>
-                    <div class="time-block"><span id="f-seconds">30</span><small>SEC</small></div>
+                <div class="flash-timer-wrapper flex-between align-center" style="gap: 30px;">
+                    <span class="timer-label" style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #ccc;">Ends In:</span>
+                    <div class="flash-timer" id="flashTimer">
+                        <div class="time-block"><span id="f-hours" style="color: var(--accent-color);">12</span><small>HRS</small></div>
+                        <span class="colon">:</span>
+                        <div class="time-block"><span id="f-minutes" style="color: var(--accent-color);">44</span><small>MIN</small></div>
+                        <span class="colon">:</span>
+                        <div class="time-block"><span id="f-seconds" style="color: var(--accent-color);">47</span><small>SEC</small></div>
+                    </div>
+                    <a href="#" class="btn-primary flash-btn-outline" style="border: 1px solid var(--accent-color); background: transparent; color: var(--accent-color); padding: 12px 25px;">Shop All Deals <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <a href="#" class="btn-primary flash-btn">Shop All Deals <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -949,6 +956,24 @@
             }, 1000);
         }
         startFlashTimer();
+        
+        // Setup Reveal Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Attach reveal class to main sections
+            document.querySelectorAll('section, .premium-trust-strip').forEach(sec => {
+                sec.classList.add('reveal-up');
+                observer.observe(sec);
+            });
+        });
     </script>
 </body>
 </html>

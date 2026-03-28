@@ -58,7 +58,7 @@ ul {
 }
 
 .section-padding {
-    padding: 60px 0;
+    padding: 35px 0;
 }
 
 .bg-light {
@@ -290,6 +290,9 @@ ul {
     left: 0;
     width: 100%;
     animation: slideDown 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 @keyframes slideDown {
@@ -450,10 +453,14 @@ ul {
 
 .hero-grid-3 {
     display: grid;
-    grid-template-columns: 50% 24% 24%;
+    grid-template-columns: 74% 24%;
+    grid-template-rows: 1fr 1fr;
     justify-content: space-between;
     gap: 15px;
-    height: 500px;
+    height: 550px;
+}
+.hero-grid-3 > .slider-container:nth-child(1) {
+    grid-row: span 2;
 }
 
 .hero-grid > a, .hero-grid > div.main-banner,
@@ -542,14 +549,16 @@ ul {
 
 .banner-badge {
     display: inline-block;
-    background: transparent;
-    border: 1px solid #fff;
+    background: var(--accent-color);
+    color: #fff;
     padding: 5px 15px;
     border-radius: 30px;
     font-size: 0.85rem;
+    font-weight: 500;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border: none;
 }
 
 .banner-content {
@@ -715,58 +724,91 @@ ul {
 
 /* Flash Sale Banner */
 .flash-sale-banner {
-    background: #000;
+    background: #0d0d0d;
     color: #fff;
-    padding: 15px 0;
+    padding: 25px 0;
     margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--accent-color);
 }
+.particle-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.4;
+    z-index: 1;
+}
+.floating-img {
+    position: absolute;
+    border-radius: 8px;
+    opacity: 0.15;
+    z-index: 1;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+.flash-sale-banner:hover .floating-img {
+    opacity: 0.35;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+.float-1 { width: 150px; left: 5%; top: -20px; transform: rotate(-10deg); }
+.float-2 { width: 120px; left: 45%; bottom: -30px; transform: rotate(15deg); }
+.float-3 { width: 180px; right: 10%; top: -10px; transform: rotate(5deg); }
+
 .flash-content {
     flex-wrap: wrap;
     gap: 20px;
 }
 .flash-text h2 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
-.flash-text h2 span {
-    font-weight: 300;
-    font-size: 1.1rem;
-    color: #ccc;
-}
-.flash-text p {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin: 0;
+.flash-timer-wrapper {
+    display: flex;
+    align-items: center;
 }
 .flash-timer {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-.timer-label {
-    font-size: 0.9rem;
-    color: #ccc;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    gap: 8px;
 }
 .time-block {
-    background: #222;
-    padding: 10px 15px;
-    border-radius: 6px;
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    min-width: 60px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+    border: 1px solid #333;
 }
 .time-block span {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--accent-color);
     line-height: 1;
 }
 .time-block small {
-    font-size: 0.7rem;
-    color: #888;
+    font-size: 0.65rem;
+    text-transform: uppercase;
     letter-spacing: 1px;
+    color: #666;
+    display: block;
+    margin-top: 3px;
+}
+.colon {
+    font-size: 1.5rem;
+    color: #555;
+    font-weight: bold;
+    margin: 0 2px;
+}
+.flash-btn-outline:hover {
+    background: var(--accent-color) !important;
+    color: #fff !important;
+    transform: translateX(3px);
 }
 .flash-timer .colon {
     font-size: 1.5rem;
@@ -1446,7 +1488,9 @@ ul {
         width: 100%;
         z-index: 100;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        background: var(--bg-white);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         animation: slideDown 0.3s ease-in-out;
     }
     
@@ -1581,4 +1625,15 @@ ul {
         min-width: 280px;
         padding: 20px;
     }
+}
+
+/* Reveal Animation */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
 }
