@@ -101,9 +101,14 @@ ul {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 60px;
+    width: 40px;
     height: 3px;
     background-color: var(--accent-color);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+}
+.section-title:hover::after {
+    width: 100%;
 }
 
 .btn-primary, .btn-secondary {
@@ -1839,10 +1844,56 @@ ul {
     color: var(--accent-color);
 }
 
-/* ✨ Enhancement: Section titles animated red underline */
-.section-title::after {
-    transition: width 0.4s ease;
+/* ✨ Enhancement: Section titles animated red underline (defined with base rule above) */
+
+/* ✨ Enhancement: Sticky nav gets subtle drop shadow after scroll */
+.main-nav.sticky {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
-.section-title:hover::after {
-    width: 60px;
+
+/* ✨ Enhancement: Premium card image zoom uses CSS only (no JS) */
+.product-card .product-img {
+    overflow: hidden;
+}
+.product-card .product-img img {
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+.product-card:hover .product-img img {
+    transform: scale(1.06);
+}
+
+/* ✨ Enhancement: WhatsApp button pulse ring animation */
+.whatsapp-widget {
+    animation: wp-pulse 2.5s infinite;
+}
+@keyframes wp-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ✨ Enhancement: Category card image zoom on hover */
+.category-card img {
+    transition: transform 0.4s ease;
+}
+.category-card:hover img {
+    transform: scale(1.08);
+}
+
+/* ✨ Enhancement: Add to cart button fills red on hover in product cards */
+.product-card .action-btn.cart-btn {
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.product-card .action-btn.cart-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* ✨ Enhancement: Search bar focus glow */
+.search-bar input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(193,18,31,0.12);
+    outline: none;
 }

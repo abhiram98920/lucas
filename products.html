@@ -14,50 +14,65 @@
 <body>
 
     <!-- Top Offer Bar -->
+    <!-- Offer Menu - Scrolling -->
     <div class="top-offer-bar">
         <div class="scrolling-text">
-            <span>🚚 Free Delivery on orders above ₹50,000</span>
-            <span>✨ New Arrivals Every Week</span>
-            <span>🔥 Flash Sale – Up to 30% Off on Select Items</span>
-            <span>🏆 30+ Years of Craftsmanship Excellence</span>
-            <span>🚚 Free Delivery on orders above ₹50,000</span>
-            <span>✨ New Arrivals Every Week</span>
-            <span>🔥 Flash Sale – Up to 30% Off on Select Items</span>
-            <span>🏆 30+ Years of Craftsmanship Excellence</span>
+            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
+            <span>🚚 Free Delivery on orders above ₹10,000! </span>
+            <span>🛡️ Best Warranty & Insurance Covered.</span>
+            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
+        </div>
+    </div>
+
+    <!-- Top Sub Menu -->
+    <div class="top-sub-menu">
+        <div class="container flex-between">
+            <div class="left-links">
+                <a href="#">Become a Franchise</a>
+                <a href="#">Bulk Order</a>
+                <a href="#">Gift Cards</a>
+                <a href="#">Track Your Order</a>
+            </div>
+            <div class="right-links">
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Media</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact Us</a>
+            </div>
         </div>
     </div>
 
     <!-- Main Header -->
     <header class="main-header" id="mainHeader">
-        <div class="container">
-            <div class="flex-between" style="align-items: center; padding: 15px 0; gap: 20px;">
-                <button class="mobile-menu-toggle desktop-hide" id="mobileMenuBtn" aria-label="Open menu">
-                    <i class="fa-solid fa-bars" style="font-size:1.3rem;"></i>
-                </button>
-                <div class="logo">
-                    <a href="index.html"><img src="logo.jpeg" alt="Lucas India Industries" style="height:55px; object-fit: contain;"></a>
-                    <p class="tagline">LUXURY ECONOMIZED</p>
-                </div>
-                <div style="flex:1; max-width: 500px; margin: 0 30px;" class="search-bar">
-                    <div class="search-inner">
-                        <input type="search" placeholder="Search handcrafted furniture, carvings..." id="searchInput">
-                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </div>
-                <div class="user-actions">
-                    <a href="#" class="action-item desktop-only"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
-                    <a href="#" class="action-item desktop-only"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
-                    <a href="index.html" class="action-item cart-icon" id="cartBtn">
-                        <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                        <span class="badge">2</span>
-                        <span class="desktop-only">Cart</span>
-                    </a>
-                </div>
+        <div class="container flex-between align-center">
+            <div class="logo">
+                <a href="#"><img src="logo.jpeg" alt="Lucas India Logo"></a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for furniture, decor, and more...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="action-item desktop-only"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
+                <a href="#" class="action-item desktop-only"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
+                <a href="#" class="action-item cart-icon" id="cartBtn">
+                    <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="badge">2</span>
+                    <span class="desktop-only">Cart</span>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Navigation Menu (Mega Menu style) -->
     <nav class="main-nav" id="mainNav">
         <div class="mobile-nav-head desktop-hide">
             <h3>Menu</h3>
@@ -65,14 +80,126 @@
         </div>
         <div class="container">
             <ul class="nav-list">
-                <li><a href="products.html?cat=offer" class="highlight">Offer Zone</a></li>
-                <li class="has-mega"><a href="products.html?cat=new-arrivals">New Arrivals <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="has-mega"><a href="products.html?cat=premium">Premium <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="has-mega"><a href="products.html?cat=bedroom">Bedroom <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="has-mega"><a href="products.html?cat=dining">Dining <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="has-mega"><a href="products.html?cat=living">Living <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="has-mega"><a href="products.html?cat=home-decor">Home Decor <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li><a href="products.html?cat=carvings">Carvings</a></li>
+                <li><a href="#" class="highlight">Offer Zone</a></li>
+                <li class="has-mega"><a href="#">New Arrivals <i class="fa-solid fa-angle-down"></i></a></li>
+                <li class="has-mega"><a href="#">Premium <i class="fa-solid fa-angle-down"></i></a></li>
+                <li class="has-mega">
+                    <a href="#">Bedroom <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Beds</h4>
+                                <ul>
+                                    <li><a href="#">King Size Beds</a></li>
+                                    <li><a href="#">Queen Size Beds</a></li>
+                                    <li><a href="#">Single Beds</a></li>
+                                    <li><a href="#">Beds with Storage</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Mattresses</h4>
+                                <ul>
+                                    <li><a href="#">Orthopedic Mattresses</a></li>
+                                    <li><a href="#">Memory Foam Mattresses</a></li>
+                                    <li><a href="#">Coil Mattresses</a></li>
+                                    <li><a href="#">Latex Mattresses</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li><a href="#">Wardrobes</a></li>
+                                    <li><a href="#">Chest of Drawers</a></li>
+                                    <li><a href="#">Bedside Tables</a></li>
+                                    <li><a href="#">Dressing Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Dining <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Dining Tables</h4>
+                                <ul>
+                                    <li><a href="#">4 Seater Sets</a></li>
+                                    <li><a href="#">6 Seater Sets</a></li>
+                                    <li><a href="#">8 Seater Sets</a></li>
+                                    <li><a href="#">Extendable Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Seating</h4>
+                                <ul>
+                                    <li><a href="#">Dining Chairs</a></li>
+                                    <li><a href="#">Dining Benches</a></li>
+                                    <li><a href="#">Bar Stools</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li><a href="#">Crockery Units</a></li>
+                                    <li><a href="#">Sideboards</a></li>
+                                    <li><a href="#">Bar Cabinets</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Living <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Sofas</h4>
+                                <ul>
+                                    <li><a href="#">3 Seater Sofas</a></li>
+                                    <li><a href="#">L-Shaped Sofas</a></li>
+                                    <li><a href="#">Recliners</a></li>
+                                    <li><a href="#">Sofa Sets</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Tables</h4>
+                                <ul>
+                                    <li><a href="#">Coffee Tables</a></li>
+                                    <li><a href="#">Side Tables</a></li>
+                                    <li><a href="#">Console Tables</a></li>
+                                    <li><a href="#">Nesting Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Seating</h4>
+                                <ul>
+                                    <li><a href="#">Lounge Chairs</a></li>
+                                    <li><a href="#">Accent Chairs</a></li>
+                                    <li><a href="#">Pouffes & Ottomans</a></li>
+                                    <li><a href="#">Benches</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega"><a href="#">Home Decor <i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#">Carvings</a></li>
             </ul>
         </div>
     </nav>
@@ -602,55 +729,172 @@
     </div>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener">
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Lucas India" class="footer-logo">
+                    <p>Luxury Economized. We deliver high-quality, handcrafted furniture and premium decor right to your doorstep, with over 30 years of excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Showroom Locations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col newsletter-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="payment-icons">
+                        <h4>We Accept</h4>
+                        <div class="icons">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom flex-between">
+                <p>&copy; 2026 Lucas India Industries. All Rights Reserved. Designed by BTen Techno Solutions.</p>
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> +91 83019 11070</span>
+                    <span><i class="fa-solid fa-envelope"></i> order@lucasindia.in</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <a href="#" class="whatsapp-widget">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Back to Top -->
-    <button id="backToTopBtn2" class="back-to-top" title="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M18 15l-6-6-6 6"/></svg>
-    </button>
-
+    <!-- Side Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="side-cart" id="sideCart">
+        <div class="cart-header">
+            <h3>Your Cart (2)</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
+                <div class="item-info">
+                    <h4>Luxury Teak Vase</h4>
+                    <p class="price">₹12,499</p>
+                    <div class="qty-control">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+            <div class="cart-item">
+                <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Item">
+                <div class="item-info">
+                    <h4>Wall Decor Carving</h4>
+                    <p class="price">₹18,500</p>
+                    <div class="qty-control">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total flex-between">
+                <span>Subtotal:</span>
+                <span class="total-price">₹30,999</span>
+            </div>
+            <a href="#" class="btn-primary checkout-btn" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+        </div>
+    </div>
+    <!-- Products Page Scripts -->
     <script>
-        // Mobile menu
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('mainNav').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        document.getElementById('closeMainNav').addEventListener('click', () => {
-            document.getElementById('mainNav').classList.remove('active');
-            document.body.style.overflow = '';
+        // Sticky Nav
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('mainNav');
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 150) {
+                if(window.innerWidth > 1024) { nav.classList.add('sticky'); header.classList.remove('sticky-mobile'); }
+                else { nav.classList.remove('sticky'); header.classList.add('sticky-mobile'); }
+            } else { nav.classList.remove('sticky'); header.classList.remove('sticky-mobile'); }
         });
 
-        // Mobile filter sidebar
+        // Side Cart
+        const cartBtn = document.getElementById('cartBtn');
+        const sideCart = document.getElementById('sideCart');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const closeCart = document.getElementById('closeCart');
+        function openCart(e) { e.preventDefault(); sideCart.classList.add('open'); cartOverlay.classList.add('open'); document.body.style.overflow='hidden'; }
+        function closeCartPanel(e) { if(e)e.preventDefault(); sideCart.classList.remove('open'); cartOverlay.classList.remove('open'); document.body.style.overflow='auto'; }
+        cartBtn.addEventListener('click', openCart);
+        closeCart.addEventListener('click', closeCartPanel);
+        cartOverlay.addEventListener('click', closeCartPanel);
+
+        // Mobile Menu
+        document.getElementById('mobileMenuBtn').addEventListener('click', (e) => {
+            e.preventDefault(); document.getElementById('mainNav').classList.add('active'); document.body.style.overflow='hidden';
+        });
+        document.getElementById('closeMainNav').addEventListener('click', (e) => {
+            e.preventDefault(); document.getElementById('mainNav').classList.remove('active'); document.body.style.overflow='';
+        });
+
+        // Mobile Filter Sidebar
         document.getElementById('mobileFilterBtn').addEventListener('click', () => {
-            document.getElementById('filterSidebar').classList.add('open');
-            document.body.style.overflow = 'hidden';
+            document.getElementById('filterSidebar').classList.add('open'); document.body.style.overflow='hidden';
         });
         document.getElementById('closeFilterBtn').addEventListener('click', () => {
-            document.getElementById('filterSidebar').classList.remove('open');
-            document.body.style.overflow = '';
+            document.getElementById('filterSidebar').classList.remove('open'); document.body.style.overflow='';
         });
 
-        // Grid / List view toggle
+        // Grid / List View
         document.getElementById('gridView').addEventListener('click', function() {
             document.getElementById('productGrid').classList.remove('list-mode');
-            this.classList.add('active');
-            document.getElementById('listView').classList.remove('active');
+            this.classList.add('active'); document.getElementById('listView').classList.remove('active');
         });
         document.getElementById('listView').addEventListener('click', function() {
             document.getElementById('productGrid').classList.add('list-mode');
-            this.classList.add('active');
-            document.getElementById('gridView').classList.remove('active');
+            this.classList.add('active'); document.getElementById('gridView').classList.remove('active');
         });
 
-        // Price range slider
+        // Price Slider
         const slider = document.getElementById('priceSlider');
         slider.addEventListener('input', function() {
             document.getElementById('priceMax').textContent = Number(this.value).toLocaleString('en-IN');
         });
-
-        // Price presets
         document.querySelectorAll('.price-preset').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.price-preset').forEach(b => b.classList.remove('active'));
@@ -660,37 +904,37 @@
             });
         });
 
-        // Sticky header on products page
+        // Back to Top Button
+        const backBtn = document.getElementById('backToTopBtn');
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.main-nav');
-            if(nav) {
-                if(window.scrollY > 80) nav.classList.add('sticky');
-                else nav.classList.remove('sticky');
-            }
-            // Back to top
-            const btn = document.getElementById('backToTopBtn2');
-            if(btn) {
-                if(window.scrollY > 400) btn.classList.add('visible');
-                else btn.classList.remove('visible');
-            }
+            if(window.scrollY > 400) backBtn.classList.add('visible');
+            else backBtn.classList.remove('visible');
         });
-        document.getElementById('backToTopBtn2').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Smart Sort
+        document.getElementById('sortSelect').addEventListener('change', function() {
+            const grid = document.getElementById('productGrid');
+            const cards = Array.from(grid.querySelectorAll('.listing-card'));
+            cards.sort((a, b) => {
+                const aPrice = parseInt(a.dataset.price);
+                const bPrice = parseInt(b.dataset.price);
+                const aRating = parseFloat(a.dataset.rating);
+                const bRating = parseFloat(b.dataset.rating);
+                if(this.value === 'price-asc') return aPrice - bPrice;
+                if(this.value === 'price-desc') return bPrice - aPrice;
+                if(this.value === 'rating') return bRating - aRating;
+                return 0;
+            });
+            cards.forEach(c => grid.appendChild(c));
         });
 
         // URL param detection
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('cat');
         if(cat) {
-            const titles = {
-                'offer': 'Offer Zone', 'new-arrivals': 'New Arrivals', 'premium': 'Premium Collection',
-                'bedroom': 'Bedroom Furniture', 'dining': 'Dining Furniture', 'living': 'Living Room',
-                'home-decor': 'Home Decor', 'carvings': 'Wood Carvings'
-            };
-            if(titles[cat]) {
-                document.getElementById('pageTitle').textContent = titles[cat];
-                document.getElementById('breadcrumbCat').textContent = titles[cat];
-            }
+            const titles = { 'offer':'Offer Zone','new-arrivals':'New Arrivals','premium':'Premium Collection','bedroom':'Bedroom Furniture','dining':'Dining','living':'Living Room','home-decor':'Home Decor','carvings':'Wood Carvings' };
+            if(titles[cat]) { document.getElementById('pageTitle').textContent = titles[cat]; document.getElementById('breadcrumbCat').textContent = titles[cat]; }
         }
     </script>
 </body>
