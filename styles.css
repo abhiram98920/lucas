@@ -1636,15 +1636,22 @@ ul {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         gap: 15px;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
+        height: auto;
     }
-    .hero-grid-3::-webkit-scrollbar { height: 4px; }
-    .hero-grid-3::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 4px; }
+    .hero-grid-3::-webkit-scrollbar { height: 0; }
     .hero-grid-3 > .slider-container { 
-        height: 400px; 
-        min-width: 85vw;
+        height: 380px; 
+        min-width: 88vw;
         flex-shrink: 0;
         scroll-snap-align: center;
+    }
+    /* Override the grid-row span so first slider doesn't dominate on mobile */
+    .hero-grid-3 > .slider-container:nth-child(1) {
+        grid-row: unset;
+    }
+    .hero-banners {
+        padding-top: 0 !important;
     }
 }
 
@@ -1721,7 +1728,7 @@ ul {
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 90px;
+    bottom: 140px;
     right: 30px;
     width: 46px;
     height: 46px;
@@ -1756,4 +1763,50 @@ ul {
     vertical-align: middle;
     position: relative;
     top: -1px;
+}
+
+/* ✨ Enhancement: "Limited Stock" urgency label on product cards */
+.badge.limited {
+    background: #ff6b35;
+    color: #fff;
+}
+.stock-warning {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #ff6b35;
+    font-weight: 600;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ✨ Enhancement: Image loading skeleton shimmer */
+.product-img img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+}
+.product-img img:not([src]) {
+    animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ✨ Enhancement: Footer links smooth underline hover */
+.footer-col ul li a {
+    position: relative;
+    padding-left: 0;
+    transition: padding-left 0.2s ease, color 0.2s ease;
+}
+.footer-col ul li a:hover {
+    padding-left: 8px;
+    color: var(--accent-color);
+}
+
+/* ✨ Enhancement: Section titles animated red underline */
+.section-title::after {
+    transition: width 0.4s ease;
+}
+.section-title:hover::after {
+    width: 60px;
 }
