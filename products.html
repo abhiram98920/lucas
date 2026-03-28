@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | Lucas India Industries – Luxury Economized</title>
+    <meta name="description" content="Browse our full collection of premium handcrafted Indian furniture, wood carvings, sculptures, and home decor. Filter by category, price, material, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Offer Bar -->
+    <div class="top-offer-bar">
+        <div class="scrolling-text">
+            <span>🚚 Free Delivery on orders above ₹50,000</span>
+            <span>✨ New Arrivals Every Week</span>
+            <span>🔥 Flash Sale – Up to 30% Off on Select Items</span>
+            <span>🏆 30+ Years of Craftsmanship Excellence</span>
+            <span>🚚 Free Delivery on orders above ₹50,000</span>
+            <span>✨ New Arrivals Every Week</span>
+            <span>🔥 Flash Sale – Up to 30% Off on Select Items</span>
+            <span>🏆 30+ Years of Craftsmanship Excellence</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container">
+            <div class="flex-between" style="align-items: center; padding: 15px 0; gap: 20px;">
+                <button class="mobile-menu-toggle desktop-hide" id="mobileMenuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars" style="font-size:1.3rem;"></i>
+                </button>
+                <div class="logo">
+                    <a href="index.html"><img src="logo.jpeg" alt="Lucas India Industries" style="height:55px; object-fit: contain;"></a>
+                    <p class="tagline">LUXURY ECONOMIZED</p>
+                </div>
+                <div style="flex:1; max-width: 500px; margin: 0 30px;" class="search-bar">
+                    <div class="search-inner">
+                        <input type="search" placeholder="Search handcrafted furniture, carvings..." id="searchInput">
+                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="action-item desktop-only"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
+                    <a href="#" class="action-item desktop-only"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
+                    <a href="index.html" class="action-item cart-icon" id="cartBtn">
+                        <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span class="badge">2</span>
+                        <span class="desktop-only">Cart</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-head desktop-hide">
+            <h3>Menu</h3>
+            <button id="closeMainNav"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="products.html?cat=offer" class="highlight">Offer Zone</a></li>
+                <li class="has-mega"><a href="products.html?cat=new-arrivals">New Arrivals <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="has-mega"><a href="products.html?cat=premium">Premium <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="has-mega"><a href="products.html?cat=bedroom">Bedroom <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="has-mega"><a href="products.html?cat=dining">Dining <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="has-mega"><a href="products.html?cat=living">Living <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="has-mega"><a href="products.html?cat=home-decor">Home Decor <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="products.html?cat=carvings">Carvings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header Breadcrumb -->
+    <div class="page-hero">
+        <div class="container-extra-wide" style="max-width:95%; margin:0 auto;">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span id="breadcrumbCat">All Products</span>
+            </nav>
+            <div class="page-hero-inner">
+                <div>
+                    <h1 id="pageTitle">All Products</h1>
+                    <p id="pageSubtitle">Handcrafted furniture and decor from the finest Indian artisans</p>
+                </div>
+                <span id="resultCount" class="result-count">Showing 18 products</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Page Layout -->
+    <div class="products-page-layout container-extra-wide" style="max-width:95%; margin:0 auto; padding: 30px 0 60px;">
+        
+        <!-- Mobile Filter Toggle -->
+        <button class="mobile-filter-btn" id="mobileFilterBtn">
+            <i class="fa-solid fa-sliders"></i> Filters & Sort
+        </button>
+
+        <div class="products-wrapper">
+            <!-- Sidebar Filters -->
+            <aside class="filter-sidebar" id="filterSidebar">
+                <div class="filter-sidebar-inner">
+                    <div class="filter-header">
+                        <h3><i class="fa-solid fa-sliders"></i> Filters</h3>
+                        <button class="clear-all-btn" id="clearAllFilters">Clear All</button>
+                        <button class="filter-close-btn desktop-hide" id="closeFilterBtn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <!-- Active Filters -->
+                    <div class="active-filters" id="activeFilters" style="display:none;">
+                        <h4>Active Filters</h4>
+                        <div class="filter-pills" id="filterPills"></div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group-title">Category</h4>
+                        <div class="filter-options">
+                            <label class="filter-option"><input type="checkbox" name="cat" value="living-room"> <span>Living Room</span> <small>24</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="bedroom"> <span>Bedroom</span> <small>18</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="dining"> <span>Dining</span> <small>12</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="carvings"> <span>Carvings</span> <small>30</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="home-decor"> <span>Home Decor</span> <small>22</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="wall-art"> <span>Wall Art</span> <small>10</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="sculptures"> <span>Sculptures</span> <small>15</small></label>
+                            <label class="filter-option"><input type="checkbox" name="cat" value="kitchen"> <span>Kitchen</span> <small>8</small></label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group-title">Price Range</h4>
+                        <div class="price-range-wrapper">
+                            <div class="price-display">
+                                <span>₹<span id="priceMin">0</span></span>
+                                <span>₹<span id="priceMax">200000</span></span>
+                            </div>
+                            <input type="range" id="priceSlider" min="0" max="200000" value="200000" step="1000" class="price-slider">
+                            <div class="price-labels">
+                                <span>₹0</span>
+                                <span>₹2,00,000</span>
+                            </div>
+                        </div>
+                        <div class="price-presets">
+                            <button class="price-preset" data-max="10000">Under ₹10k</button>
+                            <button class="price-preset" data-max="30000">Under ₹30k</button>
+                            <button class="price-preset" data-max="75000">Under ₹75k</button>
+                        </div>
+                    </div>
+
+                    <!-- Material Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group-title">Material</h4>
+                        <div class="filter-options">
+                            <label class="filter-option"><input type="checkbox" name="material" value="teak"> <span>Teak Wood</span></label>
+                            <label class="filter-option"><input type="checkbox" name="material" value="rosewood"> <span>Rosewood</span></label>
+                            <label class="filter-option"><input type="checkbox" name="material" value="sandalwood"> <span>Sandalwood</span></label>
+                            <label class="filter-option"><input type="checkbox" name="material" value="sheesham"> <span>Sheesham</span></label>
+                            <label class="filter-option"><input type="checkbox" name="material" value="mango"> <span>Mango Wood</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Finish Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group-title">Finish</h4>
+                        <div class="filter-options">
+                            <label class="filter-option"><input type="checkbox" name="finish" value="natural"> <span>Natural</span></label>
+                            <label class="filter-option"><input type="checkbox" name="finish" value="polished"> <span>Polished</span></label>
+                            <label class="filter-option"><input type="checkbox" name="finish" value="painted"> <span>Painted</span></label>
+                            <label class="filter-option"><input type="checkbox" name="finish" value="lacquered"> <span>Lacquered</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group-title">Rating</h4>
+                        <div class="filter-options">
+                            <label class="filter-option rating-filter"><input type="radio" name="rating" value="4"> <span>⭐⭐⭐⭐ & above</span></label>
+                            <label class="filter-option rating-filter"><input type="radio" name="rating" value="3"> <span>⭐⭐⭐ & above</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="filter-group">
+                        <h4 class="filter-group-title">Availability</h4>
+                        <div class="filter-options">
+                            <label class="filter-option"><input type="checkbox" name="avail" value="instock"> <span>In Stock</span></label>
+                            <label class="filter-option"><input type="checkbox" name="avail" value="custom"> <span>Custom Order</span></label>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary apply-filter-btn" onclick="void(0)">Apply Filters</button>
+                </div>
+            </aside>
+
+            <!-- Products Main Area -->
+            <div class="products-main">
+                <!-- Sort & View Control Bar -->
+                <div class="products-toolbar">
+                    <div class="toolbar-left">
+                        <span class="showing-text">Showing <strong id="showingCount">18</strong> results</span>
+                    </div>
+                    <div class="toolbar-right">
+                        <div class="sort-control">
+                            <label for="sortSelect"><i class="fa-solid fa-sort"></i> Sort:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="popular">Most Popular</option>
+                                <option value="newest">Newest First</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                                <option value="discount">Best Discount</option>
+                            </select>
+                        </div>
+                        <div class="view-toggle">
+                            <button class="view-btn active" id="gridView" title="Grid View"><i class="fa-solid fa-grip"></i></button>
+                            <button class="view-btn" id="listView" title="List View"><i class="fa-solid fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-listing-grid" id="productGrid">
+
+                    <!-- Product Card 1 -->
+                    <div class="listing-card" data-price="12499" data-cat="home-decor" data-rating="4.5">
+                        <div class="listing-card-img">
+                            <span class="badge sale">Offer</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Teak Vase Set" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View" onclick="openQuickView(0)"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <span class="discount-tag">-17%</span>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Home Decor</span>
+                            <h3>Handcrafted Teak Vase Set</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="reviews">(45)</span></div>
+                            <div class="price-container"><span class="price">₹12,499</span><span class="old-price">₹15,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="listing-card" data-price="28999" data-cat="carvings" data-rating="5">
+                        <div class="listing-card-img">
+                            <span class="badge premium">Premium</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Luxury Wooden Deer Sculptures" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Carvings</span>
+                            <h3>Luxury Wooden Deer</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(120)</span></div>
+                            <div class="price-container"><span class="price">₹28,999</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="listing-card" data-price="18500" data-cat="wall-art" data-rating="4">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Intricate Wall Carving Art" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Wall Decor</span>
+                            <h3>Intricate Wall Carving Art</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="reviews">(28)</span></div>
+                            <div class="price-container"><span class="price">₹18,500</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="listing-card" data-price="45000" data-cat="living-room" data-rating="5">
+                        <div class="listing-card-img">
+                            <span class="badge new">New</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Rustic Wooden Table" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Living Area</span>
+                            <h3>Rustic Wooden Table</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(67)</span></div>
+                            <div class="price-container"><span class="price">₹45,000</span><span class="old-price">₹50,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="listing-card" data-price="22000" data-cat="sculptures" data-rating="4.5">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Spiritual Collection Set" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Idols</span>
+                            <h3>Spiritual Collection Set</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="reviews">(95)</span></div>
+                            <div class="price-container"><span class="price">₹22,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="listing-card" data-price="65000" data-cat="carvings" data-rating="5">
+                        <div class="listing-card-img">
+                            <span class="badge premium">Premium</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Royal Carved Panel" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Exotic Carvings</span>
+                            <h3>Royal Carved Panel</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(20)</span></div>
+                            <div class="price-container"><span class="price">₹65,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="listing-card" data-price="35000" data-cat="living-room" data-rating="4.5">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Classic Velvet Couch" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Living Room</span>
+                            <h3>Classic Velvet Couch</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="reviews">(15)</span></div>
+                            <div class="price-container"><span class="price">₹35,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="listing-card" data-price="9500" data-cat="sculptures" data-rating="4.5">
+                        <div class="listing-card-img">
+                            <span class="badge sale">Offer</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Hand-Carved Figurine" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <span class="discount-tag">-21%</span>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Sculptures</span>
+                            <h3>Hand-Carved Figurine</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="reviews">(38)</span></div>
+                            <div class="price-container"><span class="price">₹9,500</span><span class="old-price">₹12,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="listing-card" data-price="7200" data-cat="kitchen" data-rating="5">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Artisan Wooden Bowl Set" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Kitchen</span>
+                            <h3>Artisan Wooden Bowl Set</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(110)</span></div>
+                            <div class="price-container"><span class="price">₹7,200</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="listing-card" data-price="38000" data-cat="home-decor" data-rating="5">
+                        <div class="listing-card-img">
+                            <span class="badge premium">Premium</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg" alt="Hand-Carved Wooden Chest" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Storage</span>
+                            <h3>Hand-Carved Wooden Chest</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(42)</span></div>
+                            <div class="price-container"><span class="price">₹38,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 11 -->
+                    <div class="listing-card" data-price="16000" data-cat="wall-art" data-rating="4">
+                        <div class="listing-card-img">
+                            <span class="badge sale">Offer</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg" alt="Traditional Carved Panel" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <span class="discount-tag">-27%</span>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Wall Art</span>
+                            <h3>Traditional Carved Panel</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="reviews">(55)</span></div>
+                            <div class="price-container"><span class="price">₹16,000</span><span class="old-price">₹22,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 12 -->
+                    <div class="listing-card" data-price="25000" data-cat="home-decor" data-rating="4">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Carved Wooden Frame" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Home Decor</span>
+                            <h3>Carved Wooden Frame</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="reviews">(31)</span></div>
+                            <div class="price-container"><span class="price">₹25,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 13 -->
+                    <div class="listing-card" data-price="55000" data-cat="bedroom" data-rating="5">
+                        <div class="listing-card-img">
+                            <span class="badge new">New</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.23.jpeg" alt="Sheesham Bed Frame" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Bedroom</span>
+                            <h3>Sheesham King Bed Frame</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(19)</span></div>
+                            <div class="price-container"><span class="price">₹55,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 14 -->
+                    <div class="listing-card" data-price="14000" data-cat="dining" data-rating="4">
+                        <div class="listing-card-img">
+                            <span class="badge sale">Offer</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.26.jpeg" alt="Wooden Dining Chairs" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <span class="discount-tag">-13%</span>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Dining</span>
+                            <h3>Teak Dining Chair Set</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="reviews">(82)</span></div>
+                            <div class="price-container"><span class="price">₹14,000</span><span class="old-price">₹16,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 15 -->
+                    <div class="listing-card" data-price="8500" data-cat="home-decor" data-rating="5">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.27.jpeg" alt="Decorative Wooden Tray" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Home Decor</span>
+                            <h3>Decorative Wooden Tray</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="reviews">(51)</span></div>
+                            <div class="price-container"><span class="price">₹8,500</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 16 -->
+                    <div class="listing-card" data-price="42000" data-cat="living-room" data-rating="4.5">
+                        <div class="listing-card-img">
+                            <span class="badge premium">Premium</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Carved Wood Wall Art" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Wall Art</span>
+                            <h3>Large Carved Jesus Panel</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="reviews">(34)</span></div>
+                            <div class="price-container"><span class="price">₹42,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 17 -->
+                    <div class="listing-card" data-price="5500" data-cat="home-decor" data-rating="4">
+                        <div class="listing-card-img">
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Wooden Candle Holder" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Home Decor</span>
+                            <h3>Wooden Candle Holder Set</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="reviews">(73)</span></div>
+                            <div class="price-container"><span class="price">₹5,500</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 18 -->
+                    <div class="listing-card" data-price="12000" data-cat="carvings" data-rating="4.5">
+                        <div class="listing-card-img">
+                            <span class="badge new">New</span>
+                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Small Carved Wooden Door" loading="lazy">
+                            <div class="listing-card-actions">
+                                <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                                <button class="action-btn cart-btn" title="Add to Cart"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="listing-card-info">
+                            <span class="category">Carvings</span>
+                            <h3>Mini Carved Decorative Door</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="reviews">(17)</span></div>
+                            <div class="price-container"><span class="price">₹12,000</span></div>
+                            <button class="add-to-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                </div><!-- End Product Grid -->
+
+                <!-- Pagination -->
+                <div class="pagination-bar">
+                    <button class="pg-btn active">1</button>
+                    <button class="pg-btn">2</button>
+                    <button class="pg-btn">3</button>
+                    <span>...</span>
+                    <button class="pg-btn">12</button>
+                    <button class="pg-btn pg-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="backToTopBtn2" class="back-to-top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script>
+        // Mobile menu
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mainNav').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        document.getElementById('closeMainNav').addEventListener('click', () => {
+            document.getElementById('mainNav').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Mobile filter sidebar
+        document.getElementById('mobileFilterBtn').addEventListener('click', () => {
+            document.getElementById('filterSidebar').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        document.getElementById('closeFilterBtn').addEventListener('click', () => {
+            document.getElementById('filterSidebar').classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        // Grid / List view toggle
+        document.getElementById('gridView').addEventListener('click', function() {
+            document.getElementById('productGrid').classList.remove('list-mode');
+            this.classList.add('active');
+            document.getElementById('listView').classList.remove('active');
+        });
+        document.getElementById('listView').addEventListener('click', function() {
+            document.getElementById('productGrid').classList.add('list-mode');
+            this.classList.add('active');
+            document.getElementById('gridView').classList.remove('active');
+        });
+
+        // Price range slider
+        const slider = document.getElementById('priceSlider');
+        slider.addEventListener('input', function() {
+            document.getElementById('priceMax').textContent = Number(this.value).toLocaleString('en-IN');
+        });
+
+        // Price presets
+        document.querySelectorAll('.price-preset').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.price-preset').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                slider.value = this.dataset.max;
+                document.getElementById('priceMax').textContent = Number(this.dataset.max).toLocaleString('en-IN');
+            });
+        });
+
+        // Sticky header on products page
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.main-nav');
+            if(nav) {
+                if(window.scrollY > 80) nav.classList.add('sticky');
+                else nav.classList.remove('sticky');
+            }
+            // Back to top
+            const btn = document.getElementById('backToTopBtn2');
+            if(btn) {
+                if(window.scrollY > 400) btn.classList.add('visible');
+                else btn.classList.remove('visible');
+            }
+        });
+        document.getElementById('backToTopBtn2').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // URL param detection
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get('cat');
+        if(cat) {
+            const titles = {
+                'offer': 'Offer Zone', 'new-arrivals': 'New Arrivals', 'premium': 'Premium Collection',
+                'bedroom': 'Bedroom Furniture', 'dining': 'Dining Furniture', 'living': 'Living Room',
+                'home-decor': 'Home Decor', 'carvings': 'Wood Carvings'
+            };
+            if(titles[cat]) {
+                document.getElementById('pageTitle').textContent = titles[cat];
+                document.getElementById('breadcrumbCat').textContent = titles[cat];
+            }
+        }
+    </script>
+</body>
+</html>

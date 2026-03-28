@@ -1656,11 +1656,47 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .section-padding { padding: 40px 0; }
+    .section-padding { padding: 20px 0; }
     .top-sub-menu { display: none; }
     .slide-content h2 { font-size: 2.5rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
     .footer-bottom.flex-between { flex-direction: column; text-align: center; gap: 15px; }
+
+    /* ── CRITICAL: All carousels stay horizontal on mobile ── */
+    .carousel-wrapper {
+        position: relative;
+    }
+    .product-carousel-track {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px !important;
+        padding-bottom: 6px;
+    }
+    .product-carousel-track .product-card {
+        min-width: 70vw !important;
+        max-width: 70vw !important;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+    .category-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px !important;
+    }
+    .category-grid .category-card {
+        min-width: 130px !important;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
     .premium-trust-strip {
         flex-direction: column;
         padding: 20px 0;
