@@ -58,7 +58,7 @@ ul {
 }
 
 .section-padding {
-    padding: 35px 0;
+    padding: 15px 0;
 }
 
 .bg-light {
@@ -453,7 +453,7 @@ ul {
 
 .hero-grid-3 {
     display: grid;
-    grid-template-columns: 74% 24%;
+    grid-template-columns: 60% 38%;
     grid-template-rows: 1fr 1fr;
     justify-content: space-between;
     gap: 15px;
@@ -581,14 +581,18 @@ ul {
 }
 
 .banner-content.small {
-    padding: 0 40px;
+    padding: 0 30px;
 }
 
 .banner-content.small h3 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     line-height: 1.2;
+}
+.banner-content.small p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
 }
 
 /* Side Cart Styles */
@@ -1158,14 +1162,15 @@ ul {
 .expert-grid {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 0;
     background: var(--bg-white);
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    overflow: hidden;
 }
 .expert-text {
     flex: 1;
-    padding: 60px;
+    padding: 60px 50px 60px 60px;
 }
 .expert-text h2 {
     font-size: 2.5rem;
@@ -1182,13 +1187,13 @@ ul {
 .expert-image {
     flex: 1;
     position: relative;
-    height: 400px;
+    height: 480px;
 }
 .expert-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0;
 }
 .expert-badge {
     position: absolute;
@@ -1206,75 +1211,93 @@ ul {
 .expert-badge i { font-size: 2rem; }
 .expert-badge span { font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
 
-/* Testimonials Section */
+/* Testimonials Modern Grid */
 .testimonials-section {
     background: var(--bg-white);
 }
-.testimonial-card {
-    background: var(--bg-light);
-    border-radius: 15px;
-    padding: 30px;
-    min-width: 350px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    border: 1px solid rgba(0,0,0,0.05);
-    transition: var(--transition);
+.testi-modern-grid {
+    display: flex;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
 }
-.testimonial-card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transform: translateY(-5px);
+.testi-stat-block {
+    flex: 1;
+    background: var(--accent-color);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    min-width: 300px;
 }
-.testi-header {
+.testi-stat-block h2 {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.testi-stat-block p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+.testi-modern-card {
+    flex: 1.5;
+    background: #fff;
+    padding: 50px 40px;
+    border-left: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+.quote-mark {
+    font-size: 4rem;
+    line-height: 0.5;
+    color: var(--text-dark);
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+    display: block;
+}
+.testi-modern-card > p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+.testi-author {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-top: auto;
 }
-.testi-img {
-    width: 60px;
-    height: 60px;
+.testi-author img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent-color);
 }
-.testi-info h4 {
-    margin: 0 0 5px 0;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-.testi-info span {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-.testi-rating {
-    color: #ffb400;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-.testi-message {
-    font-size: 0.95rem;
+.author-details strong {
+    display: block;
     color: var(--text-dark);
-    line-height: 1.6;
-    font-style: italic;
+    font-size: 1.05rem;
+}
+.author-details span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-/* Crafted Banners */
+/* Crafted Banners Modern Overlay */
 .crafted-section {
     background: var(--bg-white);
-    padding-bottom: 80px;
-}
-.crafted-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-.crafted-header h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
+    padding-bottom: 60px;
 }
 .crafted-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 20px;
 }
 .crafted-banner {
     border-radius: 12px;
@@ -1283,18 +1306,46 @@ ul {
     display: block;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     transition: var(--transition);
+    height: 300px;
 }
 .crafted-banner img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.6s ease;
+}
+.crafted-banner::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    z-index: 1;
 }
 .crafted-banner:hover {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 .crafted-banner:hover img {
     transform: scale(1.05);
+}
+.crafted-text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2;
+    color: #fff;
+    max-width: 80%;
+}
+.crafted-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.crafted-text p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
 }
 
 /* Footer styles */
@@ -1615,15 +1666,21 @@ ul {
         width: 100%;
         height: 300px;
     }
+    .expert-grid {
+        border-radius: 12px;
+    }
     .expert-image img {
         border-radius: 0 0 12px 12px;
     }
+    .testi-modern-grid {
+        flex-direction: column;
+    }
+    .testi-modern-card {
+        border-left: none;
+        border-top: 1px solid rgba(0,0,0,0.06);
+    }
     .crafted-grid {
         grid-template-columns: 1fr;
-    }
-    .testimonial-card {
-        min-width: 280px;
-        padding: 20px;
     }
 }
 
