@@ -71,6 +71,10 @@
 
     <!-- Navigation Menu (Mega Menu style) -->
     <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-head desktop-hide">
+            <h3>Menu</h3>
+            <button id="closeMainNav"><i class="fa-solid fa-xmark"></i></button>
+        </div>
         <div class="container">
             <ul class="nav-list">
                 <li><a href="#" class="highlight">Offer Zone</a></li>
@@ -638,17 +642,14 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
+        const closeMainNav = document.getElementById('closeMainNav');
 
         mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
+            mainNav.classList.add('active');
+        });
+
+        closeMainNav.addEventListener('click', () => {
+            mainNav.classList.remove('active');
         });
     </script>
 </body>
