@@ -61,7 +61,7 @@
                 <a href="#" class="action-item desktop-only"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
                 <a href="#" class="action-item desktop-only"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
                 <a href="#" class="action-item cart-icon" id="cartBtn">
-                    <i class="fa-solid fa-cart-shopping"></i> 
+                    <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                     <span class="badge">2</span>
                     <span class="desktop-only">Cart</span>
                 </a>
@@ -665,6 +665,12 @@
             </div>
         </div>
     </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -943,23 +949,18 @@
             }, 1000);
         }
         startFlashTimer();
-        
-        // Setup Reveal Animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
 
-            // Attach reveal class to main sections
-            document.querySelectorAll('section, .premium-trust-strip').forEach(sec => {
-                sec.classList.add('reveal-up');
-                observer.observe(sec);
-            });
+        // Back to Top
+        const backBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>

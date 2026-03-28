@@ -22,12 +22,35 @@
     box-sizing: border-box;
 }
 
+/* Brand Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* Brand Text Selection */
+::selection {
+    background: var(--accent-color);
+    color: #fff;
+}
+
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
     line-height: 1.6;
     background-color: var(--bg-white);
     overflow-x: hidden;
+    scrollbar-color: var(--accent-color) #f1f1f1;
+    scrollbar-width: thin;
 }
 
 a {
@@ -1684,13 +1707,53 @@ ul {
     }
 }
 
-/* Reveal Animation */
-.reveal-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* Hide horizontal scrollbar on carousels (native scroll behavior) */
+.category-grid::-webkit-scrollbar,
+.product-carousel-track::-webkit-scrollbar {
+    display: none;
 }
-.reveal-up.active {
+.category-grid,
+.product-carousel-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 46px;
+    height: 46px;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(193,18,31,0.4);
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+    pointer-events: none;
+}
+.back-to-top.visible {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: all;
+}
+.back-to-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+/* Cart SVG icon alignment */
+.cart-svg {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
