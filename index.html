@@ -310,13 +310,13 @@
                 <div class="flash-timer-wrapper flex-between align-center" style="gap: 30px;">
                     <span class="timer-label" style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #ccc;">Ends In:</span>
                     <div class="flash-timer" id="flashTimer">
-                        <div class="time-block"><span id="f-hours" style="color: var(--accent-color);">12</span><small>HRS</small></div>
-                        <span class="colon">:</span>
-                        <div class="time-block"><span id="f-minutes" style="color: var(--accent-color);">44</span><small>MIN</small></div>
-                        <span class="colon">:</span>
-                        <div class="time-block"><span id="f-seconds" style="color: var(--accent-color);">47</span><small>SEC</small></div>
+                        <div class="time-block"><span id="f-hours" style="color: #fff;">12</span><small>HRS</small></div>
+                        <span class="colon" style="color: #fff;">:</span>
+                        <div class="time-block"><span id="f-minutes" style="color: #fff;">44</span><small>MIN</small></div>
+                        <span class="colon" style="color: #fff;">:</span>
+                        <div class="time-block"><span id="f-seconds" style="color: #fff;">47</span><small>SEC</small></div>
                     </div>
-                    <a href="products.html?cat=offer" class="btn-primary flash-btn-outline" style="border: 1px solid var(--accent-color); background: transparent; color: var(--accent-color); padding: 12px 25px;">Shop All Deals <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="products.html?cat=offer" class="btn-primary flash-btn-outline" style="border: 1px solid #fff; background: transparent; color: #fff; padding: 12px 25px;">Shop All Deals <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -876,9 +876,9 @@
                     </div>
                 </div>
                 
-                <div class="testi-carousel-wrapper carousel-wrapper" style="flex: 1; position: relative; overflow: visible;">
-                    <button class="carousel-arrow prev" onclick="scrollCarousel(this, -480)" style="left: -20px;"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="carousel-arrow next" onclick="scrollCarousel(this, 480)" style="right: -20px;"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="testi-carousel-wrapper carousel-wrapper" style="flex: 1; position: relative; overflow: hidden; margin-left: 20px;">
+                    <button class="carousel-arrow prev" onclick="scrollCarousel(this, -475)" style="left: 10px; opacity: 1; pointer-events: all;"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="carousel-arrow next" onclick="scrollCarousel(this, 475)" style="right: 10px; opacity: 1; pointer-events: all;"><i class="fa-solid fa-chevron-right"></i></button>
                     
                     <div class="testi-carousel-container" style="overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none;">
                         <div class="testi-slider-wrapper product-carousel-track" style="display: flex; gap: 25px; padding: 10px 0;">
@@ -1234,8 +1234,14 @@
         });
         // Horizontal Carousel Scroll Logic
         function scrollCarousel(btn, distance) {
-            const track = btn.parentElement.querySelector('.category-grid, .product-carousel-track, .testi-carousel-container');
-            if(track) track.scrollBy({ left: distance, behavior: 'smooth' });
+            // Find the closest parent wrapper, then find the scrollable container inside it
+            const wrapper = btn.closest('.carousel-wrapper');
+            const track = wrapper ? wrapper.querySelector('.category-grid, .product-carousel-track, .testi-carousel-container') : null;
+            if (track) {
+                track.scrollBy({ left: distance, behavior: 'smooth' });
+            } else {
+                console.error('Carousel track not found for button:', btn);
+            }
         }
 
         // Flash Sale Timer Logic

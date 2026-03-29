@@ -828,20 +828,22 @@ ul {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #666;
+    color: #fff;
     display: block;
     margin-top: 3px;
+    opacity: 0.8;
 }
 .colon {
     font-size: 1.5rem;
-    color: #555;
+    color: #fff;
     font-weight: bold;
     margin: 0 2px;
 }
 .flash-btn-outline:hover {
     background: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
     color: #fff !important;
-    transform: translateX(3px);
+    transform: translateY(-2px);
 }
 .flash-timer .colon {
     font-size: 1.5rem;
@@ -1045,6 +1047,8 @@ ul {
 }
 .carousel-wrapper:hover .carousel-arrow {
     opacity: 1;
+    pointer-events: all;
+    background: #fff; /* Ensure white bg on hover of wrapper if it was transparent */
 }
 .carousel-arrow {
     position: absolute;
@@ -1052,27 +1056,28 @@ ul {
     transform: translateY(-50%);
     width: 45px;
     height: 45px;
-    background: var(--bg-white);
-    border: 1px solid var(--border-color);
+    background: #fff;
+    border: 1px solid var(--accent-color);
     border-radius: 50%;
     font-size: 1.2rem;
-    color: var(--primary-color);
+    color: var(--accent-color);
     cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 500 !important; /* High enough to be over almost everything */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
+    pointer-events: none;
 }
 .carousel-arrow:hover {
-    background: var(--accent-color);
-    color: #fff;
-    border-color: var(--accent-color);
+    background: var(--accent-color) !important;
+    color: #fff !important;
+    border-color: var(--accent-color) !important;
 }
-.carousel-arrow.prev { left: -20px; }
-.carousel-arrow.next { right: -20px; }
+.carousel-arrow.prev { left: -15px; }
+.carousel-arrow.next { right: -15px; }
 
 .product-card:hover .product-img img {
     transform: scale(1.05);
@@ -1272,12 +1277,14 @@ ul {
     position: relative;
     text-align: center;
     min-height: 380px;
+    z-index: 5;
 }
 
 .stat-slider {
     position: relative;
     height: 140px;
     width: 100%;
+    overflow: hidden;
 }
 
 .stat-item {
@@ -1286,6 +1293,7 @@ ul {
     left: 0;
     width: 100%;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
@@ -1293,6 +1301,7 @@ ul {
 
 .stat-item.active {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
 }

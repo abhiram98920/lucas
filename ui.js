@@ -161,11 +161,12 @@ const Cart = (() => {
 // ================================================================
 function initStatSlider() {
     const stats = document.querySelectorAll('#testiStatBlock .stat-item');
-    if (stats.length <= 1) return;
+    if (!stats.length || stats.length <= 1) return;
 
     let currentIndex = 0;
     setInterval(() => {
-        stats[currentIndex].classList.remove('active');
+        // Ensure only one item is active at a time
+        stats.forEach(s => s.classList.remove('active'));
         currentIndex = (currentIndex + 1) % stats.length;
         stats[currentIndex].classList.add('active');
     }, 4500); // 4.5 seconds
