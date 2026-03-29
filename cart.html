@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Lucas India Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<!-- Offer Menu - Scrolling -->
+    <div class="top-offer-bar">
+        <div class="scrolling-text">
+            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
+            <span>🚚 Free Delivery on orders above ₹10,000! </span>
+            <span>🛡️ Best Warranty & Insurance Covered.</span>
+            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
+        </div>
+    </div>
+
+    <!-- Top Sub Menu -->
+    <div class="top-sub-menu">
+        <div class="container flex-between">
+            <div class="left-links">
+                <a href="#">Become a Franchise</a>
+                <a href="#">Bulk Order</a>
+                <a href="#">Gift Cards</a>
+                <a href="#">Track Your Order</a>
+            </div>
+            <div class="right-links">
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Media</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container flex-between align-center">
+            <div class="logo">
+                <a href="index.html"><img src="logo.jpeg" alt="Lucas India Logo" width="180" height="55" decoding="async"></a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-bar" id="siteSearchBar">
+                <input type="text" id="siteSearchInput" placeholder="Search for furniture, decor, and more..." autocomplete="off">
+                <button id="siteSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="action-item desktop-only" href="login.html"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
+                <a href="#" class="action-item desktop-only" href="wishlist.html"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
+                <a href="#" class="action-item cart-icon" id="cartBtn">
+                    <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="badge">2</span>
+                    <span class="desktop-only">Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu (Mega Menu style) -->
+    <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-head desktop-hide">
+            <h3>Menu</h3>
+            <button id="closeMainNav"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#" class="highlight">Offer Zone</a></li>
+                <li class="has-mega"><a href="#">New Arrivals <i class="fa-solid fa-angle-down"></i></a></li>
+                <li class="has-mega"><a href="#">Premium <i class="fa-solid fa-angle-down"></i></a></li>
+                <li class="has-mega">
+                    <a href="#">Bedroom <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Beds</h4>
+                                <ul>
+                                    <li><a href="#">King Size Beds</a></li>
+                                    <li><a href="#">Queen Size Beds</a></li>
+                                    <li><a href="#">Single Beds</a></li>
+                                    <li><a href="#">Beds with Storage</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Mattresses</h4>
+                                <ul>
+                                    <li><a href="#">Orthopedic Mattresses</a></li>
+                                    <li><a href="#">Memory Foam Mattresses</a></li>
+                                    <li><a href="#">Coil Mattresses</a></li>
+                                    <li><a href="#">Latex Mattresses</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li><a href="#">Wardrobes</a></li>
+                                    <li><a href="#">Chest of Drawers</a></li>
+                                    <li><a href="#">Bedside Tables</a></li>
+                                    <li><a href="#">Dressing Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection" loading="lazy" decoding="async" width="280" height="180">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Dining <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Dining Tables</h4>
+                                <ul>
+                                    <li><a href="#">4 Seater Sets</a></li>
+                                    <li><a href="#">6 Seater Sets</a></li>
+                                    <li><a href="#">8 Seater Sets</a></li>
+                                    <li><a href="#">Extendable Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Seating</h4>
+                                <ul>
+                                    <li><a href="#">Dining Chairs</a></li>
+                                    <li><a href="#">Dining Benches</a></li>
+                                    <li><a href="#">Bar Stools</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li><a href="#">Crockery Units</a></li>
+                                    <li><a href="#">Sideboards</a></li>
+                                    <li><a href="#">Bar Cabinets</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection" loading="lazy" decoding="async" width="280" height="180">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Living <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Sofas</h4>
+                                <ul>
+                                    <li><a href="#">3 Seater Sofas</a></li>
+                                    <li><a href="#">L-Shaped Sofas</a></li>
+                                    <li><a href="#">Recliners</a></li>
+                                    <li><a href="#">Sofa Sets</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Tables</h4>
+                                <ul>
+                                    <li><a href="#">Coffee Tables</a></li>
+                                    <li><a href="#">Side Tables</a></li>
+                                    <li><a href="#">Console Tables</a></li>
+                                    <li><a href="#">Nesting Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Seating</h4>
+                                <ul>
+                                    <li><a href="#">Lounge Chairs</a></li>
+                                    <li><a href="#">Accent Chairs</a></li>
+                                    <li><a href="#">Pouffes & Ottomans</a></li>
+                                    <li><a href="#">Benches</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection" loading="lazy" decoding="async" width="280" height="180">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega"><a href="#">Home Decor <i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#">Carvings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-hero-banner"><div class="container inner">
+        <h1>Shopping Cart</h1>
+        <div class="page-breadcrumb">
+            <a href="index.html">Home</a><span class="crumb-sep">/</span>
+            <span class="crumb-current">Cart</span>
+        </div>
+    </div></div>
+    <div class="cart-page">
+      <div class="container container-extra-wide" style="max-width:95%;margin:0 auto;">
+        <div class="cart-grid">
+          <div>
+            <div class="cart-table-wrap">
+              <table class="cart-table">
+                <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr></thead>
+                <tbody id="cartTableBody">
+                  <tr>
+                    <td><div class="cart-item-cell">
+                      <img class="cart-item-img" src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Panel">
+                      <div class="cart-item-detail">
+                        <div class="item-name">Royal Hand-Carved Jesus Panel</div>
+                        <div class="item-cat">Exotic Carvings</div>
+                        <div class="item-finish">Finish: Natural Teak</div>
+                      </div>
+                    </div></td>
+                    <td class="item-price">₹42,000</td>
+                    <td><div class="cart-qty-control"><button onclick="cartQty(this,-1)">-</button><span>1</span><button onclick="cartQty(this,1)">+</button></div></td>
+                    <td class="item-price">₹42,000</td>
+                    <td><button class="item-remove" onclick="removeCartItem(this)" title="Remove"><i class="fa-solid fa-trash-can"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="cart-item-cell">
+                      <img class="cart-item-img" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Table">
+                      <div class="cart-item-detail">
+                        <div class="item-name">Rustic Wooden Dining Table</div>
+                        <div class="item-cat">Living Area</div>
+                        <div class="item-finish">Finish: Dark Walnut</div>
+                      </div>
+                    </div></td>
+                    <td class="item-price">₹45,000</td>
+                    <td><div class="cart-qty-control"><button onclick="cartQty(this,-1)">-</button><span>1</span><button onclick="cartQty(this,1)">+</button></div></td>
+                    <td class="item-price">₹45,000</td>
+                    <td><button class="item-remove" onclick="removeCartItem(this)" title="Remove"><i class="fa-solid fa-trash-can"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="coupon-bar">
+                <input type="text" id="couponInput" placeholder="Enter coupon code (try LUCAS10)">
+                <button onclick="applyCoupon()">Apply</button>
+              </div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="products.html" class="btn-secondary" style="padding:12px 24px;display:inline-flex;align-items:center;gap:8px;"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+            </div>
+          </div>
+          <div>
+            <div class="order-summary-box">
+              <h3>Order Summary</h3>
+              <div class="summary-row"><span>Subtotal (2 items)</span><span>₹87,000</span></div>
+              <div class="summary-row savings"><span>Discount (LUCAS10)</span><span id="discountRow" style="display:none">-₹8,700</span></div>
+              <div class="summary-row"><span>Delivery</span><span style="color:#16a34a">Free</span></div>
+              <div class="summary-row"><span>Tax (GST 18%)</span><span>₹15,660</span></div>
+              <div class="summary-row total"><span>Total</span><span id="cartTotal">₹1,02,660</span></div>
+              <a href="checkout.html" class="btn-checkout-full"><i class="fa-solid fa-lock"></i> Secure Checkout</a>
+              <div class="secure-badges">
+                <span class="secure-badge"><i class="fa-solid fa-shield-halved"></i> SSL Secured</span>
+                <span class="secure-badge"><i class="fa-solid fa-rotate-left"></i> Easy Returns</span>
+                <span class="secure-badge"><i class="fa-brands fa-cc-visa"></i> All Cards</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Lucas India" class="footer-logo">
+                    <p>Luxury Economized. We deliver high-quality, handcrafted furniture and premium decor right to your doorstep, with over 30 years of excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Showroom Locations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col newsletter-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="payment-icons">
+                        <h4>We Accept</h4>
+                        <div class="icons">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom flex-between">
+                <p>&copy; 2026 Lucas India Industries. All Rights Reserved. Designed by BTen Techno Solutions.</p>
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> +91 83019 11070</span>
+                    <span><i class="fa-solid fa-envelope"></i> order@lucasindia.in</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <a href="#" class="whatsapp-widget">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Side Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="side-cart" id="sideCart">
+        <div class="cart-header">
+            <h3>Your Cart (2)</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
+                <div class="item-info">
+                    <h4>Luxury Teak Vase</h4>
+                    <p class="price">₹12,499</p>
+                    <div class="qty-control">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+    
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="side-cart" id="sideCart">
+        <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">&times;</button></div>
+        <div class="cart-items"><div style="padding:30px;text-align:center;color:var(--text-muted);"><i class="fa-solid fa-cart-shopping" style="font-size:2rem;display:block;margin-bottom:12px;color:var(--border-color);"></i>Your cart is empty</div></div>
+        <div class="cart-footer"><a href="cart.html" class="btn-primary checkout-btn" style="width:100%;text-align:center;display:block;">View Cart</a></div>
+    </div>
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+    <button id="backToTopBtn" class="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <script src="ui.js"></script>
+    <script src="search.js"></script>
+    <script>
+function cartQty(btn, delta) {
+    const span = btn.parentElement.querySelector('span');
+    let v = parseInt(span.textContent) + delta;
+    if (v < 1) { if (confirm('Remove this item?')) { btn.closest('tr').remove(); Toast.success('Item removed'); } return; }
+    span.textContent = v;
+    Toast.info('Quantity updated');
+}
+function removeCartItem(btn) {
+    Modal.confirm('Remove Item?', 'Are you sure you want to remove this item from your cart?',
+        () => { btn.closest('tr').remove(); Toast.success('Item removed from cart'); });
+}
+function applyCoupon() {
+    const code = document.getElementById('couponInput').value.trim().toUpperCase();
+    const disc = document.getElementById('discountRow');
+    if (code === 'LUCAS10') {
+        disc.style.display = 'flex';
+        document.getElementById('cartTotal').textContent = '₹93,960';
+        Toast.success('Coupon <strong>LUCAS10</strong> applied! You saved ₹8,700');
+    } else if (code) {
+        Toast.error('Invalid coupon code. Try <strong>LUCAS10</strong>');
+    }
+}
+</script>
+</body>
+</html>

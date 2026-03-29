@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Lucas India Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="pages.css">
+</head><body>
+<!-- Offer Menu - Scrolling -->
+    <div class="top-offer-bar">
+        <div class="scrolling-text">
+            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
+            <span>🚚 Free Delivery on orders above ₹10,000! </span>
+            <span>🛡️ Best Warranty & Insurance Covered.</span>
+            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
+        </div>
+    </div>
+
+    <!-- Top Sub Menu -->
+    <div class="top-sub-menu">
+        <div class="container flex-between">
+            <div class="left-links">
+                <a href="#">Become a Franchise</a>
+                <a href="#">Bulk Order</a>
+                <a href="#">Gift Cards</a>
+                <a href="#">Track Your Order</a>
+            </div>
+            <div class="right-links">
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Media</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container flex-between align-center">
+            <div class="logo">
+                <a href="index.html"><img src="logo.jpeg" alt="Lucas India Logo" width="180" height="55" decoding="async"></a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-bar" id="siteSearchBar">
+                <input type="text" id="siteSearchInput" placeholder="Search for furniture, decor, and more..." autocomplete="off">
+                <button id="siteSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="action-item desktop-only" href="login.html"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
+                <a href="#" class="action-item desktop-only" href="wishlist.html"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
+                <a href="#" class="action-item cart-icon" id="cartBtn">
+                    <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="badge">2</span>
+                    <span class="desktop-only">Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu (Mega Menu style) -->
+    <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-head desktop-hide">
+            <h3>Menu</h3>
+            <button id="closeMainNav"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#" class="highlight">Offer Zone</a></li>
+                <li class="has-mega"><a href="#">New Arrivals <i class="fa-solid fa-angle-down"></i></a></li>
+                <li class="has-mega"><a href="#">Premium <i class="fa-solid fa-angle-down"></i></a></li>
+                <li class="has-mega">
+                    <a href="#">Bedroom <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Beds</h4>
+                                <ul>
+                                    <li><a href="#">King Size Beds</a></li>
+                                    <li><a href="#">Queen Size Beds</a></li>
+                                    <li><a href="#">Single Beds</a></li>
+                                    <li><a href="#">Beds with Storage</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Mattresses</h4>
+                                <ul>
+                                    <li><a href="#">Orthopedic Mattresses</a></li>
+                                    <li><a href="#">Memory Foam Mattresses</a></li>
+                                    <li><a href="#">Coil Mattresses</a></li>
+                                    <li><a href="#">Latex Mattresses</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li><a href="#">Wardrobes</a></li>
+                                    <li><a href="#">Chest of Drawers</a></li>
+                                    <li><a href="#">Bedside Tables</a></li>
+                                    <li><a href="#">Dressing Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection" loading="lazy" decoding="async" width="280" height="180">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Dining <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Dining Tables</h4>
+                                <ul>
+                                    <li><a href="#">4 Seater Sets</a></li>
+                                    <li><a href="#">6 Seater Sets</a></li>
+                                    <li><a href="#">8 Seater Sets</a></li>
+                                    <li><a href="#">Extendable Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Seating</h4>
+                                <ul>
+                                    <li><a href="#">Dining Chairs</a></li>
+                                    <li><a href="#">Dining Benches</a></li>
+                                    <li><a href="#">Bar Stools</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li><a href="#">Crockery Units</a></li>
+                                    <li><a href="#">Sideboards</a></li>
+                                    <li><a href="#">Bar Cabinets</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection" loading="lazy" decoding="async" width="280" height="180">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#">Living <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-column">
+                                <h4>Sofas</h4>
+                                <ul>
+                                    <li><a href="#">3 Seater Sofas</a></li>
+                                    <li><a href="#">L-Shaped Sofas</a></li>
+                                    <li><a href="#">Recliners</a></li>
+                                    <li><a href="#">Sofa Sets</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Tables</h4>
+                                <ul>
+                                    <li><a href="#">Coffee Tables</a></li>
+                                    <li><a href="#">Side Tables</a></li>
+                                    <li><a href="#">Console Tables</a></li>
+                                    <li><a href="#">Nesting Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Seating</h4>
+                                <ul>
+                                    <li><a href="#">Lounge Chairs</a></li>
+                                    <li><a href="#">Accent Chairs</a></li>
+                                    <li><a href="#">Pouffes & Ottomans</a></li>
+                                    <li><a href="#">Benches</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-image-column">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection" loading="lazy" decoding="async" width="280" height="180">
+                                <br>
+                                <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega"><a href="#">Home Decor <i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#">Carvings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-hero-banner"><div class="container inner"><h1>My Account</h1>
+        <div class="page-breadcrumb"><a href="index.html">Home</a><span class="crumb-sep">/</span><span class="crumb-current">My Account</span></div>
+    </div></div>
+    <div class="profile-page"><div class="container container-extra-wide" style="max-width:95%;margin:0 auto;">
+      <div class="profile-layout">
+        <!-- Sidebar -->
+        <div class="profile-sidebar">
+          <div class="profile-avatar-area">
+            <div class="profile-avatar">AS<span class="avatar-edit"><i class="fa-solid fa-pen"></i></span></div>
+            <div class="profile-name">Arjun Sharma</div>
+            <div class="profile-email">arjun@example.com</div>
+            <div class="profile-badge"><i class="fa-solid fa-crown"></i> Premium Member</div>
+          </div>
+          <div class="profile-nav-item active" onclick="switchTab('orders',this)"><i class="fa-solid fa-bag-shopping"></i> My Orders</div>
+          <div class="profile-nav-item" onclick="switchTab('wishlist_tab',this)"><i class="fa-regular fa-heart"></i> Wishlist</div>
+          <div class="profile-nav-item" onclick="switchTab('address',this)"><i class="fa-solid fa-location-dot"></i> Saved Addresses</div>
+          <div class="profile-nav-item" onclick="switchTab('settings',this)"><i class="fa-solid fa-gear"></i> Account Settings</div>
+          <div class="profile-nav-item" onclick="switchTab('notifications',this)"><i class="fa-solid fa-bell"></i> Notifications</div>
+          <div class="profile-nav-item danger" onclick="doLogout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</div>
+        </div>
+        <!-- Content -->
+        <div class="profile-content">
+          <!-- Orders tab -->
+          <div class="profile-panel" id="tab-orders">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Order History</h3>
+            <div style="overflow-x:auto;">
+              <table class="order-history-table">
+                <thead><tr><th>Order ID</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>LII-2026-00742</strong></td><td>29 Mar 2026</td><td>2 items</td><td>₹93,960</td><td><span class="order-status-chip chip-shipped">Shipped</span></td><td><a href="order-status.html" style="color:var(--accent-color);font-weight:600;text-decoration:none;font-size:0.85rem;">Track</a></td></tr>
+                  <tr><td><strong>LII-2026-00618</strong></td><td>14 Mar 2026</td><td>1 item</td><td>₹18,500</td><td><span class="order-status-chip chip-delivered">Delivered</span></td><td><a href="order-status.html" style="color:var(--accent-color);font-weight:600;text-decoration:none;font-size:0.85rem;">View</a></td></tr>
+                  <tr><td><strong>LII-2026-00451</strong></td><td>02 Feb 2026</td><td>3 items</td><td>₹1,24,000</td><td><span class="order-status-chip chip-delivered">Delivered</span></td><td><a href="order-status.html" style="color:var(--accent-color);font-weight:600;text-decoration:none;font-size:0.85rem;">View</a></td></tr>
+                  <tr><td><strong>LII-2025-00298</strong></td><td>18 Dec 2025</td><td>1 item</td><td>₹42,000</td><td><span class="order-status-chip chip-cancelled">Cancelled</span></td><td><a href="#" onclick="Toast.info('Refund processed within 5–7 days')" style="color:var(--text-muted);font-size:0.85rem;">Refund Status</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Wishlist tab -->
+          <div class="profile-panel" id="tab-wishlist_tab" style="display:none;">
+            <h3><i class="fa-regular fa-heart"></i> My Wishlist</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+              <div class="wishlist-card"><div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="" loading="lazy"><button class="remove-wish" onclick="Modal.confirm('Remove?','Remove from wishlist?',()=>{this.closest('.wishlist-card').remove();Toast.success('Removed from wishlist')})"><i class="fa-solid fa-heart-crack"></i></button></div><div class="card-body"><div class="card-cat">Carvings</div><div class="card-name">Royal Jesus Panel</div><div class="card-price">₹42,000</div><div class="card-actions"><button class="btn-move-cart" onclick="Toast.success('Added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button></div></div></div>
+              <div class="wishlist-card"><div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="" loading="lazy"><button class="remove-wish" onclick="Toast.success('Removed')"><i class="fa-solid fa-heart-crack"></i></button></div><div class="card-body"><div class="card-cat">Carvings</div><div class="card-name">Mini Carved Door</div><div class="card-price">₹12,000</div><div class="card-actions"><button class="btn-move-cart" onclick="Toast.success('Added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button></div></div></div>
+            </div>
+          </div>
+          <!-- Address tab -->
+          <div class="profile-panel" id="tab-address" style="display:none;">
+            <h3><i class="fa-solid fa-location-dot"></i> Saved Addresses</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-bottom:20px;">
+              <div style="border:2px solid var(--accent-color);border-radius:14px;padding:20px;position:relative;background:rgba(193,18,31,0.02);">
+                <span style="position:absolute;top:12px;right:12px;background:var(--accent-color);color:#fff;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:20px;">Default</span>
+                <div style="font-weight:700;margin-bottom:6px;">Home</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;">Arjun Sharma<br>42, Anna Nagar, 1st Main Road<br>Chennai – 600040, Tamil Nadu<br>+91 98765 43210</div>
+                <div style="display:flex;gap:10px;margin-top:14px;"><button onclick="Toast.info('Edit address...')" style="padding:7px 16px;border:1px solid var(--border-color);border-radius:8px;background:none;cursor:pointer;font-family:var(--font-main);font-size:0.82rem;">Edit</button></div>
+              </div>
+              <div style="border:2px dashed var(--border-color);border-radius:14px;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;min-height:160px;color:var(--text-muted);" onclick="Toast.info('Add address form coming...')">
+                <i class="fa-solid fa-plus" style="font-size:1.5rem;color:var(--accent-color);"></i>
+                <span style="font-size:0.88rem;font-weight:600;">Add New Address</span>
+              </div>
+            </div>
+          </div>
+          <!-- Settings tab -->
+          <div class="profile-panel" id="tab-settings" style="display:none;">
+            <h3><i class="fa-solid fa-gear"></i> Account Settings</h3>
+            <div class="form-grid" style="max-width:580px;">
+              <div class="form-group"><label>First Name</label><input type="text" value="Arjun"></div>
+              <div class="form-group"><label>Last Name</label><input type="text" value="Sharma"></div>
+              <div class="form-group form-span-2"><label>Email</label><input type="email" value="arjun@example.com"></div>
+              <div class="form-group form-span-2"><label>Phone</label><input type="tel" value="+91 98765 43210"></div>
+              <div class="form-group form-span-2"><label>Date of Birth</label><input type="date" value="1995-06-15"></div>
+            </div>
+            <button onclick="Toast.success('Profile updated successfully!')" style="margin-top:20px;padding:12px 28px;background:var(--accent-color);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-family:var(--font-main);">Save Changes</button>
+            <hr style="margin:28px 0;border-color:var(--border-color);">
+            <h4 style="margin-bottom:16px;">Change Password</h4>
+            <div class="form-grid" style="max-width:580px;">
+              <div class="form-group form-span-2"><label>Current Password</label><input type="password" placeholder="••••••••"></div>
+              <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"></div>
+              <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="••••••••"></div>
+            </div>
+            <button onclick="Toast.success('Password changed!')" style="margin-top:16px;padding:12px 28px;background:var(--text-dark);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-family:var(--font-main);">Update Password</button>
+          </div>
+          <!-- Notifications -->
+          <div class="profile-panel" id="tab-notifications" style="display:none;">
+            <h3><i class="fa-solid fa-bell"></i> Notification Preferences</h3>
+            <div style="display:flex;flex-direction:column;gap:16px;max-width:500px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-light);border-radius:12px;"><div><div style="font-weight:600">Order Updates</div><div style="font-size:0.82rem;color:var(--text-muted);">Shipping, delivery, cancellation</div></div><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--accent-color);cursor:pointer;"></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-light);border-radius:12px;"><div><div style="font-weight:600">Offers & Deals</div><div style="font-size:0.82rem;color:var(--text-muted);">Flash sales, coupons, new arrivals</div></div><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--accent-color);cursor:pointer;"></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-light);border-radius:12px;"><div><div style="font-weight:600">SMS Alerts</div><div style="font-size:0.82rem;color:var(--text-muted);">Text messages on your phone</div></div><input type="checkbox" style="width:20px;height:20px;accent-color:var(--accent-color);cursor:pointer;"></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-light);border-radius:12px;"><div><div style="font-weight:600">WhatsApp Updates</div><div style="font-size:0.82rem;color:var(--text-muted);">Order status on WhatsApp</div></div><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--accent-color);cursor:pointer;"></div>
+            </div>
+            <button onclick="Toast.success('Preferences saved!')" style="margin-top:20px;padding:12px 28px;background:var(--accent-color);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-family:var(--font-main);">Save Preferences</button>
+          </div>
+        </div><!-- /profile-content -->
+      </div>
+    </div></div>
+<footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Lucas India" class="footer-logo">
+                    <p>Luxury Economized. We deliver high-quality, handcrafted furniture and premium decor right to your doorstep, with over 30 years of excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Showroom Locations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col newsletter-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="payment-icons">
+                        <h4>We Accept</h4>
+                        <div class="icons">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom flex-between">
+                <p>&copy; 2026 Lucas India Industries. All Rights Reserved. Designed by BTen Techno Solutions.</p>
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> +91 83019 11070</span>
+                    <span><i class="fa-solid fa-envelope"></i> order@lucasindia.in</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <a href="#" class="whatsapp-widget">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Side Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="side-cart" id="sideCart">
+        <div class="cart-header">
+            <h3>Your Cart (2)</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
+                <div class="item-info">
+                    <h4>Luxury Teak Vase</h4>
+                    <p class="price">₹12,499</p>
+                    <div class="qty-control">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="side-cart" id="sideCart">
+        <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">&times;</button></div>
+        <div class="cart-items"><div style="padding:30px;text-align:center;color:var(--text-muted);"><i class="fa-solid fa-cart-shopping" style="font-size:2rem;display:block;margin-bottom:12px;color:var(--border-color);"></i>Your cart is empty</div></div>
+        <div class="cart-footer"><a href="cart.html" class="btn-primary checkout-btn" style="width:100%;text-align:center;display:block;">View Cart</a></div>
+    </div>
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+    <button id="backToTopBtn" class="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <script src="ui.js"></script><script src="search.js"></script>
+    <script>
+function switchTab(id, el){
+    document.querySelectorAll(".profile-panel").forEach(p=>p.style.display="none");
+    document.getElementById("tab-"+id).style.display="block";
+    document.querySelectorAll(".profile-nav-item:not(.danger)").forEach(n=>n.classList.remove("active"));
+    el.classList.add("active");
+}
+function doLogout(){
+    Modal.confirm("Sign Out?","Are you sure you want to sign out of your account?",
+        ()=>{ Toast.info("Signing out..."); setTimeout(()=>window.location.href="login.html",1200); });
+}
+</script>
+</body></html>
