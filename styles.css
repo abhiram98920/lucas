@@ -305,7 +305,7 @@ ul {
 /* Main Navigation */
 .main-nav {
     background: var(--bg-white);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     position: relative;
     z-index: 100;
     transition: var(--transition);
@@ -318,8 +318,8 @@ ul {
     width: 100%;
     animation: slideDown 0.3s ease-in-out;
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px) saturate(180%); -webkit-backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%); -webkit-backdrop-filter: blur(15px) saturate(180%);
 }
 
 @keyframes slideDown {
@@ -1567,8 +1567,8 @@ ul {
         z-index: 100;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(15px) saturate(180%); -webkit-backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%); -webkit-backdrop-filter: blur(15px) saturate(180%);
         animation: slideDown 0.3s ease-in-out;
     }
     
@@ -1904,4 +1904,41 @@ section, .products-page-layout, .main-footer {
 /* Ensure hero is always visible immediately */
 .hero-banners, .main-header, .main-nav, .top-offer-bar, .top-sub-menu {
     content-visibility: visible !important;
+}
+
+/* Micro-interactions */
+.btn-primary:active, .btn-secondary:active { transform: scale(0.96); }
+.product-card { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; }
+.product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.product-card .product-img img { transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.product-card:hover .product-img img { transform: scale(1.1); }
+
+/* Quick View Button */
+.quick-view-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    color: var(--text-dark);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+}
+.product-card:hover .quick-view-btn, .wishlist-card:hover .quick-view-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+.quick-view-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
 }

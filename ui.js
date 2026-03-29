@@ -152,9 +152,76 @@ const Cart = (() => {
 })();
 
 // ================================================================
+// SCROLL REVEAL (Intersection Observer)
+// ================================================================
+const ScrollReveal = (() => {
+    function init() {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        reveals.forEach(el => observer.observe(el));
+    }
+    return { init };
+})();
+
+// ================================================================
+// QUICK VIEW SYSTEM
+// ================================================================
+const QuickView = (() => {
+    function open(product) {
+        // Close search list if open
+        const sResults = document.getElementById('searchResults');
+        if (sResults) sResults.style.display = 'none';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'modal-overlay qv-overlay';
+        overlay.style.cssText = 'z-index: 99999; display: flex; align-items: center; justify-content: center;';
+        overlay.innerHTML = `
+            <div class="modal-box quickview-modal-content" style="max-width: 900px; padding: 0; overflow: hidden; display: flex; text-align: left; background: #fff; width: 92%; position: relative;">
+                <button class="close-cart" style="top: 15px; right: 20px; z-index: 10; background: none; border: none; font-size: 2rem; cursor: pointer;" onclick="this.closest('.qv-overlay').remove(); document.body.style.overflow='';">&times;</button>
+                <div class="qv-img-area" style="flex: 1.2; background: #f9f9f9; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <img src="${product.img}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px;" alt="${product.name}">
+                </div>
+                <div class="qv-info-area" style="flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">${product.cat || 'Premium Collection'}</div>
+                    <h2 style="font-size: 2rem; margin-bottom: 15px; line-height: 1.2;">${product.name}</h2>
+                    <div style="font-size: 1.6rem; font-weight: 700; color: var(--accent-color); margin-bottom: 25px;">${product.price}</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px;">This exquisite piece from Lucas India reflects our commitment to quality and timeless design. Handcrafted using premium grade materials, it’s designed to elevate your living space.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button class="btn-primary" style="flex: 1; min-width: 160px; height: 50px; font-weight: 700;" onclick="LucasCart.add({id:${product.id || Date.now()}, name:'${product.name}', price:${typeof product.price === 'string' ? product.price.replace(/[^\d]/g,'') : product.price}, img:'${product.img}'}); this.closest('.qv-overlay').remove(); document.body.style.overflow='';">Add to Cart</button>
+                        <a href="product.html" class="btn-secondary" style="height: 50px; display: flex; align-items: center; justify-content: center; padding: 0 25px; border-color: var(--border-color); color: var(--text-dark);">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    .quickview-modal-content { flex-direction: column; max-height: 90vh; overflow-y: auto !important; }
+                    .qv-img-area { min-height: 300px; }
+                    .qv-info-area { padding: 25px !important; }
+                }
+            </style>
+        `;
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+        
+        overlay.addEventListener('click', e => { if (e.target === overlay) { overlay.remove(); document.body.style.overflow=''; } });
+    }
+    return { open };
+})();
+
+// ================================================================
 // SHARED NAV INTERACTIONS (runs on every page)
 // ================================================================
 document.addEventListener('DOMContentLoaded', function () {
+    // Init Scroll Reveal
+    ScrollReveal.init();
+
     // Sticky nav
     let _scrolling = false;
     window.addEventListener('scroll', function () {
@@ -205,3 +272,4 @@ document.addEventListener('DOMContentLoaded', function () {
 window.Toast = Toast;
 window.Modal = Modal;
 window.LucasCart = Cart;
+window.QuickView = QuickView;

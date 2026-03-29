@@ -8,7 +8,7 @@
     <link rel="preload" as="image" href="logo.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="animations.css">
 </head><body>
 <!-- Offer Menu - Scrolling -->
     <div class="top-offer-bar">
@@ -208,20 +208,100 @@
         <div style="font-size:0.92rem;color:var(--text-muted);">Showing <strong>6</strong> saved items</div>
         <button onclick="Modal.confirm('Clear All?','Remove all items from your wishlist?',()=>{document.getElementById('wishGrid').innerHTML='<div style=\"text-align:center;padding:60px 20px;\"><i class=\"fa-regular fa-heart\" style=\"font-size:4rem;color:var(--border-color);display:block;margin-bottom:20px;\"></i><h3>Your wishlist is empty</h3><a href=\"products.html\" class=\"btn-primary\" style=\"display:inline-block;margin-top:16px;padding:12px 28px;\">Explore Products</a></div>';Toast.success('Wishlist cleared')})" style="padding:10px 20px;border:2px solid #dc2626;border-radius:10px;background:none;color:#dc2626;cursor:pointer;font-weight:600;font-family:var(--font-main);">Clear All</button>
       </div>
+      
       <div class="wishlist-grid" id="wishGrid">
-    <div class="wishlist-card">
-      <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Royal Hand-Carved Jesus Panel" loading="lazy" width="300" height="300">
-        <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Exotic Carvings</div>
-        <div class="card-name">Royal Hand-Carved Jesus Panel</div>
-        <div class="card-price">₹42,000</div>
-        <div class="card-actions">
-          <button class="btn-move-cart" onclick="Toast.success('<strong>Royal Hand-Carved Jesus Panel</strong> added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        <div class="wishlist-card reveal">
+          <div class="card-img">
+            <img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Royal Hand-Carved Jesus Panel" loading="lazy">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
+            <button class="quick-view-btn" onclick="QuickView.open({id:1, name:'Royal Hand-Carved Jesus Panel', price:'₹42,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg', cat:'Exotic Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Exotic Carvings</div>
+            <div class="card-name">Royal Hand-Carved Jesus Panel</div>
+            <div class="card-price">₹42,000</div>
+            <div class="card-actions">
+              <button class="btn-move-cart" onclick="LucasCart.add({id:1, name:'Royal Hand-Carved Jesus Panel', price:42000, img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-card reveal reveal-delay-1">
+          <div class="card-img">
+            <img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Mini Carved Decorative Door" loading="lazy">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
+            <button class="quick-view-btn" onclick="QuickView.open({id:2, name:'Mini Carved Decorative Door', price:'₹12,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg', cat:'Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Carvings</div>
+            <div class="card-name">Mini Carved Decorative Door</div>
+            <div class="card-price">₹12,000</div>
+            <div class="card-actions">
+              <button class="btn-move-cart" onclick="LucasCart.add({id:2, name:'Mini Carved Decorative Door', price:12000, img:'images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-card reveal reveal-delay-2">
+          <div class="card-img">
+            <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Rustic Wooden Dining Table" loading="lazy">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
+            <button class="quick-view-btn" onclick="QuickView.open({id:3, name:'Rustic Wooden Dining Table', price:'₹45,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg', cat:'Living Area'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Living Area</div>
+            <div class="card-name">Rustic Wooden Dining Table</div>
+            <div class="card-price">₹45,000</div>
+            <div class="card-actions">
+              <button class="btn-move-cart" onclick="LucasCart.add({id:3, name:'Rustic Wooden Dining Table', price:45000, img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-card reveal reveal-delay-3">
+          <div class="card-img">
+            <img src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Wooden Candle Holder Set" loading="lazy">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
+            <button class="quick-view-btn" onclick="QuickView.open({id:4, name:'Wooden Candle Holder Set', price:'₹5,500', img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Home Decor</div>
+            <div class="card-name">Wooden Candle Holder Set</div>
+            <div class="card-price">₹5,500</div>
+            <div class="card-actions">
+              <button class="btn-move-cart" onclick="LucasCart.add({id:4, name:'Wooden Candle Holder Set', price:5500, img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-card reveal reveal-delay-4">
+          <div class="card-img">
+            <img src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Carved Wooden Frame" loading="lazy">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
+            <button class="quick-view-btn" onclick="QuickView.open({id:5, name:'Carved Wooden Frame', price:'₹25,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Home Decor</div>
+            <div class="card-name">Carved Wooden Frame</div>
+            <div class="card-price">₹25,000</div>
+            <div class="card-actions">
+              <button class="btn-move-cart" onclick="LucasCart.add({id:5, name:'Carved Wooden Frame', price:25000, img:'images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-card reveal reveal-delay-5">
+          <div class="card-img">
+            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Intricate Wall Carving Art" loading="lazy">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
+            <button class="quick-view-btn" onclick="QuickView.open({id:6, name:'Intricate Wall Carving Art', price:'₹18,500', img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg', cat:'Wall Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="card-body">
+            <div class="card-cat">Wall Decor</div>
+            <div class="card-name">Intricate Wall Carving Art</div>
+            <div class="card-price">₹18,500</div>
+            <div class="card-actions">
+              <button class="btn-move-cart" onclick="LucasCart.add({id:6, name:'Intricate Wall Carving Art', price:18500, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div></div>
     <div class="wishlist-card">
       <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Mini Carved Decorative Door" loading="lazy" width="300" height="300">
         <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
@@ -351,32 +431,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- WhatsApp Chat Widget -->
-    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-widget" aria-label="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Side Cart -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="side-cart" id="sideCart">
-        <div class="cart-header">
-            <h3>Your Cart (2)</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
-        </div>
-        <div class="cart-items">
-            <div class="cart-item">
-                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
-                <div class="item-info">
-                    <h4>Luxury Teak Vase</h4>
-                    <p class="price">₹12,499</p>
-                    <div class="qty-control">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                </div>
-
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="side-cart" id="sideCart">
         <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">&times;</button></div>
@@ -388,8 +442,13 @@
     <script src="ui.js"></script><script src="search.js"></script>
     <script>
 function removeWish(btn){
-    Modal.confirm("Remove Item?","Remove this item from your wishlist?",
-        ()=>{{btn.closest(".wishlist-card").remove();Toast.success("Removed from wishlist");}});
+    Modal.confirm("Remove Item?","Are you sure you want to remove this item from your wishlist?",
+        ()=>{
+            btn.closest(".wishlist-card").remove();
+            Toast.success("Removed from wishlist");
+            if(document.getElementById("wishGrid").children.length === 0){
+                document.getElementById("wishGrid").innerHTML = `<div style="text-align:center;padding:60px 20px;grid-column:1/-1;"><i class="fa-regular fa-heart" style="font-size:4rem;color:var(--border-color);display:block;margin-bottom:20px;"></i><h3>Your wishlist is empty</h3><a href="products.html" class="btn-primary" style="display:inline-block;margin-top:16px;">Explore Products</a></div>`;
+            }
+        });
 }
-</script>
-</body></html>
+</script></body></html>
