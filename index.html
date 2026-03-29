@@ -75,7 +75,7 @@
                 <a href="wishlist.html" class="action-item desktop-only"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
                 <a href="#" class="action-item cart-icon" id="cartBtn">
                     <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    <span class="badge">2</span>
+                    <span class="cart-badge">0</span>
                     <span class="desktop-only">Cart</span>
                 </a>
             </div>
@@ -369,31 +369,27 @@
     <section class="category-showcase section-padding">
         <div class="container container-extra-wide">
             <h2 class="section-title" style="margin-left: 15px;">Shop by Category</h2>
-            <div class="carousel-wrapper">
-                <button class="carousel-arrow prev" onclick="scrollCarousel(this, -350)"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="carousel-arrow next" onclick="scrollCarousel(this, 350)"><i class="fa-solid fa-chevron-right"></i></button>
-                <div class="category-grid">
-                    <a href="products.html" class="category-card">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Living Room">
-                        <div class="cat-overlay"><h3>Living Room</h3></div>
-                    </a>
-                    <a href="products.html" class="category-card">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Outdoors">
-                        <div class="cat-overlay"><h3>Outdoors</h3></div>
-                    </a>
-                    <a href="products.html" class="category-card">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Decor Carvings">
-                        <div class="cat-overlay"><h3>Decor Carvings</h3></div>
-                    </a>
-                    <a href="products.html" class="category-card">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.49.jpeg" alt="Premium Artifacts">
-                        <div class="cat-overlay"><h3>Premium Artifacts</h3></div>
-                    </a>
-                    <a href="products.html" class="category-card">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
-                        <div class="cat-overlay"><h3>Wall Decor</h3></div>
-                    </a>
-                </div>
+            <div class="category-grid">
+                <a href="products.html" class="category-card">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Living Room">
+                    <div class="cat-overlay"><h3>Living Room</h3></div>
+                </a>
+                <a href="products.html" class="category-card">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Outdoors">
+                    <div class="cat-overlay"><h3>Outdoors</h3></div>
+                </a>
+                <a href="products.html" class="category-card">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Decor Carvings">
+                    <div class="cat-overlay"><h3>Decor Carvings</h3></div>
+                </a>
+                <a href="products.html" class="category-card">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.49.jpeg" alt="Premium Artifacts">
+                    <div class="cat-overlay"><h3>Premium Artifacts</h3></div>
+                </a>
+                <a href="products.html" class="category-card">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
+                    <div class="cat-overlay"><h3>Wall Decor</h3></div>
+                </a>
             </div>
         </div>
     </section>
@@ -410,11 +406,15 @@
                 <button class="carousel-arrow next" onclick="scrollCarousel(this, 320)"><i class="fa-solid fa-chevron-right"></i></button>
                 <div class="product-carousel-track">
                     <!-- Product 1 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Vases">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:1, name:'Royal Teak Sofa Set', price:12499, img:'images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:1, name:'Royal Teak Sofa Set', price:'₹12,499', img:'images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Home Decor</span>
@@ -424,11 +424,15 @@
                         </div>
                     </div>
                     <!-- Product 2 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:2, name:'Exotic Carved Wall Panel', price:28999, img:'images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:2, name:'Exotic Carved Wall Panel', price:'₹28,999', img:'images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg', cat:'Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Carvings</span>
@@ -438,10 +442,14 @@
                         </div>
                     </div>
                     <!-- Product 3 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:3, name:'Intricate Wall Carving Art', price:18500, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:3, name:'Intricate Wall Carving Art', price:'₹18,500', img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg', cat:'Wall Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Wall Decor</span>
@@ -455,7 +463,11 @@
                         <div class="product-img">
                             <span class="badge new">New</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:4, name:'Premium Carved Chair', price:18000, img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button>
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:4, name:'Premium Carved Chair', price:'₹18,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg', cat:'Furniture'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Living Area</span>
@@ -469,7 +481,11 @@
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Carved Figurine" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:5, name:'Antique Door Handle', price:4500, img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button>
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:5, name:'Antique Door Handle', price:'₹4,500', img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg', cat:'Hardware'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Sculptures</span>
@@ -482,7 +498,11 @@
                     <div class="product-card">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Wooden Bowl Set" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:6, name:'Luxury Sofa Set', price:85000, img:'images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button>
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:6, name:'Luxury Sofa Set', price:'₹85,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg', cat:'Living Room'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Kitchen</span>
@@ -508,11 +528,15 @@
                 <button class="carousel-arrow next" onclick="scrollCarousel(this, 320)"><i class="fa-solid fa-chevron-right"></i></button>
                 <div class="product-carousel-track">
                     <!-- Product 1 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Vases">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:1, name:'Handcrafted Teak Vases Set', price:12499, img:'images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:1, name:'Handcrafted Teak Vases Set', price:'₹12,499', img:'images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Home Decor</span>
@@ -522,11 +546,15 @@
                         </div>
                     </div>
                     <!-- Product 2 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:2, name:'Luxury Wooden Deer', price:28999, img:'images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:2, name:'Luxury Wooden Deer', price:'₹28,999', img:'images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg', cat:'Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Carvings</span>
@@ -536,10 +564,14 @@
                         </div>
                     </div>
                     <!-- Product 3 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:3, name:'Intricate Wall Carving Art', price:18500, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:3, name:'Intricate Wall Carving Art', price:'₹18,500', img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg', cat:'Wall Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Wall Decor</span>
@@ -549,11 +581,15 @@
                         </div>
                     </div>
                     <!-- Product 4 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge new">New</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:4, name:'Rustic Wooden Table', price:45000, img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:4, name:'Rustic Wooden Table', price:'₹45,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg', cat:'Living Area'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Living Area</span>
@@ -563,11 +599,15 @@
                         </div>
                     </div>
                     <!-- Product 5 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Carved Figurine" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:8, name:'Hand-Carved Figurine', price:9500, img:'images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:8, name:'Hand-Carved Figurine', price:'₹9,500', img:'images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg', cat:'Sculptures'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Sculptures</span>
@@ -577,10 +617,14 @@
                         </div>
                     </div>
                     <!-- Product 6 -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Wooden Bowl Set" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:9, name:'Artisan Wooden Bowl Set', price:7200, img:'images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:9, name:'Artisan Wooden Bowl Set', price:'₹7,200', img:'images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg', cat:'Kitchen'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Kitchen</span>
@@ -605,10 +649,14 @@
                 <button class="carousel-arrow prev" onclick="scrollCarousel(this, -320)"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="carousel-arrow next" onclick="scrollCarousel(this, 320)"><i class="fa-solid fa-chevron-right"></i></button>
                 <div class="product-carousel-track">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Sofaset">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:7, name:'Classic Velvet Couch', price:35000, img:'images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:7, name:'Classic Velvet Couch', price:'₹35,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg', cat:'Living Room'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Living Room</span>
@@ -618,11 +666,15 @@
                         </div>
                     </div>
                     <!-- Duplicate standard products for visual fill -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:2, name:'Luxury Wooden Deer', price:28999, img:'images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:2, name:'Luxury Wooden Deer', price:'₹28,999', img:'images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg', cat:'Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Carvings</span>
@@ -631,10 +683,14 @@
                             <div class="price-container"><span class="price">₹28,999</span></div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:3, name:'Intricate Wall Carving Art', price:18500, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:3, name:'Intricate Wall Carving Art', price:'₹18,500', img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg', cat:'Wall Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Wall Decor</span>
@@ -643,11 +699,15 @@
                             <div class="price-container"><span class="price">₹18,500</span></div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge new">New</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:4, name:'Rustic Wooden Table', price:45000, img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:4, name:'Rustic Wooden Table', price:'₹45,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg', cat:'Living Area'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Living Area</span>
@@ -657,11 +717,15 @@
                         </div>
                     </div>
                     <!-- Extra products from image folder -->
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg" alt="Carved Chest" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:10, name:'Hand-Carved Wooden Chest', price:38000, img:'images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:10, name:'Hand-Carved Wooden Chest', price:'₹38,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg', cat:'Storage'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Storage</span>
@@ -670,11 +734,15 @@
                             <div class="price-container"><span class="price">₹38,000</span></div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
                             <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg" alt="Carved Panel" loading="lazy">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:11, name:'Traditional Carved Panel', price:16000, img:'images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:11, name:'Traditional Carved Panel', price:'₹16,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg', cat:'Wall Art'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Wall Art</span>
@@ -699,10 +767,14 @@
                 <button class="carousel-arrow prev" onclick="scrollCarousel(this, -320)"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="carousel-arrow next" onclick="scrollCarousel(this, 320)"><i class="fa-solid fa-chevron-right"></i></button>
                 <div class="product-carousel-track">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Spiritual">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:5, name:'Spiritual Collection Set', price:22000, img:'images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:5, name:'Spiritual Collection Set', price:'₹22,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg', cat:'Idols'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Idols</span>
@@ -711,11 +783,15 @@
                             <div class="price-container"><span class="price">₹22,000</span></div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Carved Door">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:6, name:'Royal Carved Panel', price:65000, img:'images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:6, name:'Royal Carved Panel', price:'₹65,000', img:'images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg', cat:'Exotic Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Exotic Carvings</span>
@@ -724,10 +800,14 @@
                             <div class="price-container"><span class="price">₹65,000</span></div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Teak Vases">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:1, name:'Handcrafted Teak Vases Set', price:12499, img:'images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:1, name:'Handcrafted Teak Vases Set', price:'₹12,499', img:'images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Home Decor</span>
@@ -736,11 +816,15 @@
                             <div class="price-container"><span class="price">₹12,499</span></div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location='product.html'" style="cursor:pointer;">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
                             <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
-                            <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button> <button class="quick-view-btn" onclick="QuickView.open({name:'Premium Product', price:'₹10,000', img:'logo.jpeg'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> </div>
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="event.stopPropagation()"><i class="fa-regular fa-heart"></i></button>
+                                <button class="action-btn cart-btn" onclick="event.stopPropagation(); LucasCart.add({id:12, name:'Intricate Wooden Decor', price:15000, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i></button> 
+                                <button class="quick-view-btn" onclick="event.stopPropagation(); QuickView.open({id:12, name:'Intricate Wooden Decor', price:'₹15,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg', cat:'Wall Art'})" title="Quick View"><i class="fa-regular fa-eye"></i></button> 
+                            </div>
                         </div>
                         <div class="product-info">
                             <span class="category">Wall Art</span>
@@ -779,29 +863,85 @@
         <div class="container container-extra-wide">
             <h2 class="section-title" style="margin-left: 15px;">Happy Customers</h2>
             <div class="testi-modern-grid">
-                <div class="testi-stat-block">
-                    <h2>50,000+</h2>
-                    <p>Successfully delivered furniture pieces</p>
-                </div>
-                <div class="testi-modern-card">
-                    <span class="quote-mark">“</span>
-                    <p>The quality of the teak wood dining set I received is absolutely phenomenal. It has completely transformed my dining area.</p>
-                    <div class="testi-author">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/pexel-solliefoto-298863.jpg" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" alt="Ananya S.">
-                        <div class="author-details">
-                            <strong>Ananya Sharma</strong>
-                            <span>Mumbai, Maharashtra</span>
+                <div class="testi-stat-block" id="testiStatBlock">
+                    <div class="stat-slider">
+                        <div class="stat-item active">
+                            <h2>50,000+</h2>
+                            <p>Successfully delivered furniture pieces</p>
+                        </div>
+                        <div class="stat-item">
+                            <h2>30+</h2>
+                            <p>Years in service & excellence</p>
                         </div>
                     </div>
                 </div>
-                <div class="testi-modern-card">
-                    <span class="quote-mark">“</span>
-                    <p>I booked a design expert to customize a wall carving. They understood my vision perfectly and the final piece is a masterpiece.</p>
-                    <div class="testi-author">
-                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.18 (1).jpeg" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'" alt="Rahul M.">
-                        <div class="author-details">
-                            <strong>Rahul Verma</strong>
-                            <span>Bangalore, Karnataka</span>
+                
+                <div class="testi-carousel-wrapper carousel-wrapper" style="flex: 1; position: relative; overflow: visible;">
+                    <button class="carousel-arrow prev" onclick="scrollCarousel(this, -480)" style="left: -20px;"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="carousel-arrow next" onclick="scrollCarousel(this, 480)" style="right: -20px;"><i class="fa-solid fa-chevron-right"></i></button>
+                    
+                    <div class="testi-carousel-container" style="overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none;">
+                        <div class="testi-slider-wrapper product-carousel-track" style="display: flex; gap: 25px; padding: 10px 0;">
+                            <!-- Card 1 -->
+                            <div class="testi-modern-card" style="flex: 0 0 450px; scroll-snap-align: start;">
+                                <span class="quote-mark">“</span>
+                                <p>The quality of the teak wood dining set I received is absolutely phenomenal. It has completely transformed my dining area.</p>
+                                <div class="testi-author">
+                                    <img width="400" height="400" decoding="async" loading="lazy" src="images/pexel-solliefoto-298863.jpg" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" alt="Ananya S.">
+                                    <div class="author-details">
+                                        <strong>Ananya Sharma</strong>
+                                        <span>Mumbai, Maharashtra</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="testi-modern-card" style="flex: 0 0 450px; scroll-snap-align: start;">
+                                <span class="quote-mark">“</span>
+                                <p>I booked a design expert to customize a wall carving. They understood my vision perfectly and the final piece is a masterpiece.</p>
+                                <div class="testi-author">
+                                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.18 (1).jpeg" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'" alt="Rahul M.">
+                                    <div class="author-details">
+                                        <strong>Rahul Verma</strong>
+                                        <span>Bangalore, Karnataka</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="testi-modern-card" style="flex: 0 0 450px; scroll-snap-align: start;">
+                                <span class="quote-mark">“</span>
+                                <p>Lucas India's delivery was prompt and the furniture arrived in perfect condition. Their customer support was extremely helpful throughout the process.</p>
+                                <div class="testi-author">
+                                    <img width="400" height="400" decoding="async" loading="lazy" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K.">
+                                    <div class="author-details">
+                                        <strong>Priya Kapoor</strong>
+                                        <span>Delhi, NCR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="testi-modern-card" style="flex: 0 0 450px; scroll-snap-align: start;">
+                                <span class="quote-mark">“</span>
+                                <p>The attention to detail in their hand-carved panels is incredible. It's rare to find such authentic craftsmanship at these prices.</p>
+                                <div class="testi-author">
+                                    <img width="400" height="400" decoding="async" loading="lazy" src="https://randomuser.me/api/portraits/men/86.jpg" alt="Vikram S.">
+                                    <div class="author-details">
+                                        <strong>Vikram Singh</strong>
+                                        <span>Jaipur, Rajasthan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="testi-modern-card" style="flex: 0 0 450px; scroll-snap-align: start;">
+                                <span class="quote-mark">“</span>
+                                <p>Absolutely love my new Sheesham bed! It's sturdy, stylish, and exactly what I was looking for. I highly recommend Lucas India.</p>
+                                <div class="testi-author">
+                                    <img width="400" height="400" decoding="async" loading="lazy" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Meera N.">
+                                    <div class="author-details">
+                                        <strong>Meera Nair</strong>
+                                        <span>Kochi, Kerala</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1094,7 +1234,7 @@
         });
         // Horizontal Carousel Scroll Logic
         function scrollCarousel(btn, distance) {
-            const track = btn.parentElement.querySelector('.category-grid, .product-carousel-track');
+            const track = btn.parentElement.querySelector('.category-grid, .product-carousel-track, .testi-carousel-container');
             if(track) track.scrollBy({ left: distance, behavior: 'smooth' });
         }
 
@@ -1136,6 +1276,9 @@
         });
     </script>
 
+    <!-- UI/Cart Logic -->
+    <script src="ui.js"></script>
+    
     <!-- Live Search -->
     <script src="search.js"></script>
 </body>

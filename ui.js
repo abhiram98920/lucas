@@ -126,7 +126,11 @@ const Cart = (() => {
 
     function updateBadge() {
         const count = items.reduce((s, i) => s + i.qty, 0);
-        document.querySelectorAll('.badge').forEach(b => b.textContent = count || 0);
+        document.querySelectorAll('.cart-badge').forEach(b => {
+            b.textContent = count || 0;
+            // Force visibility if needed
+            b.style.display = count > 0 ? 'flex' : 'none';
+        });
     }
 
     function add(product) {
@@ -148,16 +152,28 @@ const Cart = (() => {
     function getTotal() { return items.reduce((s, i) => s + (i.price * i.qty), 0); }
 
     load();
-    return { add, remove, clear, getAll, getCount, getTotal, load };
+    updateBadge(); // Initial update
+    return { add, remove, clear, getAll, getCount, getTotal, load, updateBadge };
 })();
 
 // ================================================================
-// SCROLL REVEAL (Intersection Observer)
+// TESTIMONIAL STATS SLIDER (Auto-Slide)
 // ================================================================
+function initStatSlider() {
+    const stats = document.querySelectorAll('#testiStatBlock .stat-item');
+    if (stats.length <= 1) return;
 
-// ================================================================
-// SKELETON LOADER SYSTEM
-// ================================================================
+    let currentIndex = 0;
+    setInterval(() => {
+        stats[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % stats.length;
+        stats[currentIndex].classList.add('active');
+    }, 4500); // 4.5 seconds
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initStatSlider();
+});
 const SkeletonLoader = (() => {
     function init() {
         const images = document.querySelectorAll('img:not(.no-skeleton)');
@@ -207,19 +223,19 @@ const QuickView = (() => {
         overlay.className = 'modal-overlay qv-overlay';
         overlay.style.cssText = 'z-index: 99999; display: flex; align-items: center; justify-content: center;';
         overlay.innerHTML = `
-            <div class="modal-box quickview-modal-content" style="max-width: 900px; padding: 0; overflow: hidden; display: flex; text-align: left; background: #fff; width: 92%; position: relative;">
-                <button class="close-cart" style="top: 15px; right: 20px; z-index: 10; background: none; border: none; font-size: 2rem; cursor: pointer;" onclick="this.closest('.qv-overlay').remove(); document.body.style.overflow='';">&times;</button>
-                <div class="qv-img-area" style="flex: 1.2; background: #f9f9f9; display: flex; align-items: center; justify-content: center; padding: 20px;">
-                    <img src="${product.img}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px;" alt="${product.name}">
+            <div class="modal-box quickview-modal-content" style="max-width: 900px; padding: 0; overflow: hidden; display: flex; text-align: left; background: #fff; width: 92%; position: relative; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <button class="close-cart" style="position: absolute; top: 15px; right: 20px; z-index: 100; background: #fff; border: 1px solid #ddd; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" onclick="this.closest('.qv-overlay').remove(); document.body.style.overflow='';">&times;</button>
+                <div class="qv-img-area" style="flex: 1.2; background: #f9f9f9; display: flex; align-items: center; justify-content: center; padding: 20px; min-height: 400px;">
+                    <img src="${product.img}" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; transition: transform 0.3s;" alt="${product.name}" onerror="this.src='logo.jpeg'">
                 </div>
                 <div class="qv-info-area" style="flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
-                    <div style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">${product.cat || 'Premium Collection'}</div>
-                    <h2 style="font-size: 2rem; margin-bottom: 15px; line-height: 1.2;">${product.name}</h2>
-                    <div style="font-size: 1.6rem; font-weight: 700; color: var(--accent-color); margin-bottom: 25px;">${product.price}</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px;">This exquisite piece from Lucas India reflects our commitment to quality and timeless design. Handcrafted using premium grade materials, it’s designed to elevate your living space.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <button class="btn-primary" style="flex: 1; min-width: 160px; height: 50px; font-weight: 700;" onclick="LucasCart.add({id:${product.id || Date.now()}, name:'${product.name}', price:${typeof product.price === 'string' ? product.price.replace(/[^\d]/g,'') : product.price}, img:'${product.img}'}); this.closest('.qv-overlay').remove(); document.body.style.overflow='';">Add to Cart</button>
-                        <a href="product.html" class="btn-secondary" style="height: 50px; display: flex; align-items: center; justify-content: center; padding: 0 25px; border-color: var(--border-color); color: var(--text-dark);">View Details</a>
+                    <div style="font-size: 0.8rem; color: #c1121f; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">${product.cat || 'Premium Collection'}</div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 12px; line-height: 1.2; color: #1a1a1a;">${product.name}</h2>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #c1121f; margin-bottom: 20px;">${product.price}</div>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;">This exquisite piece from Lucas India reflects our commitment to quality and timeless design. Handcrafted using premium grade materials, it’s designed to elevate your living space.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button class="btn-primary" style="flex: 1; min-width: 150px; height: 48px; font-weight: 600; background: #c1121f; color: #fff; border: none; border-radius: 6px; cursor: pointer;" onclick="event.stopPropagation(); LucasCart.add({id:${product.id || Date.now()}, name:'${product.name.replace(/'/g, "\\'")}', price:parseInt('${product.price}'.replace(/[^\d]/g,'')), img:'${product.img}'}); this.closest('.qv-overlay').remove(); document.body.style.overflow='';">Add to Cart</button>
+                        <a href="product.html" class="btn-secondary" style="height: 48px; border: 1px solid #ddd; padding: 0 20px; border-radius: 6px; display: flex; align-items: center; text-decoration: none; color: #1a1a1a;">View Details</a>
                     </div>
                 </div>
             </div>
