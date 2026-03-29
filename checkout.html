@@ -8,7 +8,8 @@
     <link rel="preload" as="image" href="logo.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="animations.css">
 </head><body>
 <!-- Offer Menu - Scrolling -->
     <div class="top-offer-bar">
@@ -329,64 +330,49 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Chat Widget -->
-    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-widget" aria-label="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Side Cart -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="side-cart" id="sideCart">
-        <div class="cart-header">
-            <h3>Your Cart (2)</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
-        </div>
-        <div class="cart-items">
-            <div class="cart-item">
-                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
-                <div class="item-info">
-                    <h4>Luxury Teak Vase</h4>
-                    <p class="price">₹12,499</p>
-                    <div class="qty-control">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                </div>
-
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="side-cart" id="sideCart">
         <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">&times;</button></div>
-        <div class="cart-items"><div style="padding:30px;text-align:center;color:var(--text-muted);"><i class="fa-solid fa-cart-shopping" style="font-size:2rem;display:block;margin-bottom:12px;color:var(--border-color);"></i>Your cart is empty</div></div>
+        <div class="cart-items">
+            <div class="empty-cart-state" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+                <div class="empty-icon" style="font-size: 3rem; margin-bottom: 20px; color: #eee; transform: rotate(-10deg);"><i class="fa-solid fa-cart-shopping"></i></div>
+                <h4 style="color: var(--text-dark); margin-bottom: 10px;">Your cart is empty</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 25px;">Looks like you haven't added anything to your cart yet.</p>
+                <a href="products.html" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem; border-radius: 50px;">Start Shopping</a>
+            </div>
+        </div>
         <div class="cart-footer"><a href="cart.html" class="btn-primary checkout-btn" style="width:100%;text-align:center;display:block;">View Cart</a></div>
     </div>
     <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
     <button id="backToTopBtn" class="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <script src="ui.js"></script><script src="search.js"></script>
+
+    <script src="ui.js"></script>
+    <script src="search.js"></script>
     <script>
-function selectPay(el){
-    document.querySelectorAll('.pay-option').forEach(p=>p.classList.remove('selected'));
-    el.classList.add('selected');
-    const val = el.querySelector('input').value;
-    document.getElementById('upiRow').style.display = val==='upi' ? 'flex' : 'none';
-}
-function verifyUPI(){
-    const val = document.getElementById('upiId').value;
-    if(val && val.includes('@')) Toast.success('UPI ID verified successfully!');
-    else Toast.error('Please enter a valid UPI ID (e.g. name@upi)');
-}
-function placeOrder(){
-    const fname = document.getElementById('fname').value;
-    const phone = document.getElementById('phone').value;
-    const addr  = document.getElementById('addr').value;
-    if(!fname||!phone||!addr){
-        Modal.error('Missing Details', 'Please fill in all required delivery details before placing your order.');
-        return;
+    function selectPay(el){
+        document.querySelectorAll('.pay-option').forEach(p=>p.classList.remove('selected'));
+        el.classList.add('selected');
+        const val = el.querySelector('input').value;
+        const upiRow = document.getElementById('upiRow');
+        if(upiRow) upiRow.style.display = val==='upi' ? 'flex' : 'none';
     }
-    Modal.success('Order Placed!', 'Redirecting to your order confirmation...', {
-        confirmText: 'View Order',
-        onConfirm: ()=>{ window.location.href='order-success.html'; }
-    });
-}
-</script>
+    function verifyUPI(){
+        const val = document.getElementById('upiId').value;
+        if(val && val.includes('@')) Toast.success('UPI ID verified successfully!');
+        else Toast.error('Please enter a valid UPI ID (e.g. name@upi)');
+    }
+    function placeOrder(){
+        const fname = document.getElementById('fname').value;
+        const phone = document.getElementById('phone').value;
+        const addr  = document.getElementById('addr').value;
+        if(!fname||!phone||!addr){
+            Modal.error('Missing Details', 'Please fill in all required delivery details before placing your order.');
+            return;
+        }
+        Modal.success('Order Placed!', 'Redirecting to your order confirmation...', {
+            confirmText: 'View Order',
+            onConfirm: ()=>{ window.location.href='order-success.html'; }
+        });
+    }
+    </script>
 </body></html>
