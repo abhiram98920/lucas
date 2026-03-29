@@ -1,41 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Wishlist | Lucas India Industries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="logo.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="animations.css">
-</head><body>
-<!-- Offer Menu - Scrolling -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+    <!-- Offer Menu -->
     <div class="top-offer-bar">
         <div class="scrolling-text">
             <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
             <span>🚚 Free Delivery on orders above ₹10,000! </span>
             <span>🛡️ Best Warranty & Insurance Covered.</span>
-            <span>🎉 Flash Sale: Up to 50% Off on Premium Living Room Decor! </span>
-        </div>
-    </div>
-
-    <!-- Top Sub Menu -->
-    <div class="top-sub-menu">
-        <div class="container flex-between">
-            <div class="left-links">
-                <a href="products.html?cat=franchise">Become a Franchise</a>
-                <a href="products.html">Bulk Order</a>
-                <a href="products.html">Gift Cards</a>
-                <a href="order-status.html">Track Your Order</a>
-            </div>
-            <div class="right-links">
-                <a href="404.html">About Us</a>
-                <a href="404.html">Careers</a>
-                <a href="404.html">Media</a>
-                <a href="404.html">Blog</a>
-                <a href="404.html">Contact Us</a>
-            </div>
         </div>
     </div>
 
@@ -43,417 +27,200 @@
     <header class="main-header" id="mainHeader">
         <div class="container flex-between align-center">
             <div class="logo">
-                <a href="index.html"><img src="logo.jpeg" alt="Lucas India Logo" width="180" height="55" decoding="async"></a>
+                <a href="index.html"><img src="logo.jpeg" alt="Lucas India Logo" width="180" height="55"></a>
             </div>
-            
-            <!-- Mobile Toggle -->
-            <button class="mobile-menu-toggle" id="mobileMenuBtn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <div class="search-bar" id="siteSearchBar">
-                <input type="text" id="siteSearchInput" placeholder="Search for furniture, decor, and more..." autocomplete="off">
+            <div class="search-bar">
+                <input type="text" id="siteSearchInput" placeholder="Search for furniture..." autocomplete="off">
                 <button id="siteSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-
             <div class="user-actions">
-                <a href="login.html" class="action-item desktop-only"><i class="fa-regular fa-user"></i> <span>Login/Sign Up</span></a>
-                <a href="wishlist.html" class="action-item desktop-only"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
+                <a href="login.html" class="action-item"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+                <a href="wishlist.html" class="action-item active"><i class="fa-regular fa-heart"></i> <span>Wishlist</span></a>
                 <a href="#" class="action-item cart-icon" id="cartBtn">
-                    <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    <span class="badge">2</span>
-                    <span class="desktop-only">Cart</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="badge">0</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Navigation Menu (Mega Menu style) -->
-    <nav class="main-nav" id="mainNav">
-        <div class="mobile-nav-head desktop-hide">
-            <h3>Menu</h3>
-            <button id="closeMainNav"><i class="fa-solid fa-xmark"></i></button>
-        </div>
+    <!-- Navigation -->
+    <nav class="main-nav">
         <div class="container">
             <ul class="nav-list">
-                <li><a href="products.html?cat=offer" class="highlight">Offer Zone</a></li>
-                <li class="has-mega"><a href="products.html?cat=new-arrivals">New Arrivals <i class="fa-solid fa-angle-down"></i></a></li>
-                <li class="has-mega"><a href="products.html?cat=premium">Premium <i class="fa-solid fa-angle-down"></i></a></li>
-                <li class="has-mega">
-                    <a href="products.html?cat=bedroom">Bedroom <i class="fa-solid fa-angle-down"></i></a>
-                    <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <div class="mega-column">
-                                <h4>Beds</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=bedroom">King Size Beds</a></li>
-                                    <li><a href="products.html?cat=bedroom">Queen Size Beds</a></li>
-                                    <li><a href="products.html?cat=bedroom">Single Beds</a></li>
-                                    <li><a href="products.html?cat=bedroom">Beds with Storage</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-column">
-                                <h4>Mattresses</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=bedroom">Orthopedic Mattresses</a></li>
-                                    <li><a href="products.html?cat=bedroom">Memory Foam Mattresses</a></li>
-                                    <li><a href="products.html?cat=bedroom">Coil Mattresses</a></li>
-                                    <li><a href="products.html?cat=bedroom">Latex Mattresses</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-column">
-                                <h4>Storage</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=bedroom">Wardrobes</a></li>
-                                    <li><a href="products.html?cat=bedroom">Chest of Drawers</a></li>
-                                    <li><a href="products.html?cat=bedroom">Bedside Tables</a></li>
-                                    <li><a href="products.html?cat=bedroom">Dressing Tables</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection" loading="lazy" decoding="async" width="280" height="180">
-                                <br>
-                                <a href="products.html" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="has-mega">
-                    <a href="products.html?cat=dining">Dining <i class="fa-solid fa-angle-down"></i></a>
-                    <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <div class="mega-column">
-                                <h4>Dining Tables</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=dining">4 Seater Sets</a></li>
-                                    <li><a href="products.html?cat=dining">6 Seater Sets</a></li>
-                                    <li><a href="products.html?cat=dining">8 Seater Sets</a></li>
-                                    <li><a href="products.html?cat=dining">Extendable Tables</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-column">
-                                <h4>Seating</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=dining">Dining Chairs</a></li>
-                                    <li><a href="products.html?cat=dining">Dining Benches</a></li>
-                                    <li><a href="products.html?cat=dining">Bar Stools</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-column">
-                                <h4>Storage</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=dining">Crockery Units</a></li>
-                                    <li><a href="products.html?cat=dining">Sideboards</a></li>
-                                    <li><a href="products.html?cat=dining">Bar Cabinets</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection" loading="lazy" decoding="async" width="280" height="180">
-                                <br>
-                                <a href="products.html" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="has-mega">
-                    <a href="products.html?cat=living">Living <i class="fa-solid fa-angle-down"></i></a>
-                    <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <div class="mega-column">
-                                <h4>Sofas</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=living">3 Seater Sofas</a></li>
-                                    <li><a href="products.html?cat=living">L-Shaped Sofas</a></li>
-                                    <li><a href="products.html?cat=living">Recliners</a></li>
-                                    <li><a href="products.html?cat=living">Sofa Sets</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-column">
-                                <h4>Tables</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=living">Coffee Tables</a></li>
-                                    <li><a href="products.html?cat=living">Side Tables</a></li>
-                                    <li><a href="products.html?cat=living">Console Tables</a></li>
-                                    <li><a href="products.html?cat=living">Nesting Tables</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-column">
-                                <h4>Seating</h4>
-                                <ul>
-                                    <li><a href="products.html?cat=living">Lounge Chairs</a></li>
-                                    <li><a href="products.html?cat=living">Accent Chairs</a></li>
-                                    <li><a href="products.html?cat=living">Pouffes & Ottomans</a></li>
-                                    <li><a href="products.html?cat=living">Benches</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection" loading="lazy" decoding="async" width="280" height="180">
-                                <br>
-                                <a href="products.html" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="has-mega"><a href="products.html?cat=home-decor">Home Decor <i class="fa-solid fa-angle-down"></i></a></li>
-                <li><a href="products.html?cat=carvings">Carvings</a></li>
+                <li><a href="products.html?cat=offer">Offer Zone</a></li>
+                <li><a href="products.html?cat=new">New Arrivals</a></li>
+                <li><a href="products.html?cat=premium">Premium</a></li>
+                <li><a href="products.html?cat=bedroom">Bedroom</a></li>
+                <li><a href="products.html?cat=dining">Dining</a></li>
+                <li><a href="products.html?cat=living">Living</a></li>
+                <li><a href="products.html?cat=decor">Home Decor</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="page-hero-banner"><div class="container inner"><h1>My Wishlist</h1>
-        <div class="page-breadcrumb"><a href="index.html">Home</a><span class="crumb-sep">/</span><span class="crumb-current">Wishlist</span></div>
-    </div></div>
-    <div class="wishlist-page"><div class="container container-extra-wide" style="max-width:95%;margin:0 auto;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
-        <div style="font-size:0.92rem;color:var(--text-muted);">Showing <strong>6</strong> saved items</div>
-        <button onclick="Modal.confirm('Clear All?','Remove all items from your wishlist?',()=>{document.getElementById('wishGrid').innerHTML='<div style=\"text-align:center;padding:60px 20px;\"><i class=\"fa-regular fa-heart\" style=\"font-size:4rem;color:var(--border-color);display:block;margin-bottom:20px;\"></i><h3>Your wishlist is empty</h3><a href=\"products.html\" class=\"btn-primary\" style=\"display:inline-block;margin-top:16px;padding:12px 28px;\">Explore Products</a></div>';Toast.success('Wishlist cleared')})" style="padding:10px 20px;border:2px solid #dc2626;border-radius:10px;background:none;color:#dc2626;cursor:pointer;font-weight:600;font-family:var(--font-main);">Clear All</button>
-      </div>
-      
-      <div class="wishlist-grid" id="wishGrid">
-        <div class="wishlist-card reveal">
-          <div class="card-img">
-            <img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Royal Hand-Carved Jesus Panel" loading="lazy">
-            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-            <button class="quick-view-btn" onclick="QuickView.open({id:1, name:'Royal Hand-Carved Jesus Panel', price:'₹42,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg', cat:'Exotic Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-cat">Exotic Carvings</div>
-            <div class="card-name">Royal Hand-Carved Jesus Panel</div>
-            <div class="card-price">₹42,000</div>
-            <div class="card-actions">
-              <button class="btn-move-cart" onclick="LucasCart.add({id:1, name:'Royal Hand-Carved Jesus Panel', price:42000, img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-            </div>
-          </div>
+    <!-- Page Hero -->
+    <div class="page-hero-banner">
+        <div class="container inner">
+            <h1>My Wishlist</h1>
+            <div class="page-breadcrumb"><a href="index.html">Home</a> / <span class="crumb-current">Wishlist</span></div>
         </div>
-        <div class="wishlist-card reveal reveal-delay-1">
-          <div class="card-img">
-            <img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Mini Carved Decorative Door" loading="lazy">
-            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-            <button class="quick-view-btn" onclick="QuickView.open({id:2, name:'Mini Carved Decorative Door', price:'₹12,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg', cat:'Carvings'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-cat">Carvings</div>
-            <div class="card-name">Mini Carved Decorative Door</div>
-            <div class="card-price">₹12,000</div>
-            <div class="card-actions">
-              <button class="btn-move-cart" onclick="LucasCart.add({id:2, name:'Mini Carved Decorative Door', price:12000, img:'images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="wishlist-card reveal reveal-delay-2">
-          <div class="card-img">
-            <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Rustic Wooden Dining Table" loading="lazy">
-            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-            <button class="quick-view-btn" onclick="QuickView.open({id:3, name:'Rustic Wooden Dining Table', price:'₹45,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg', cat:'Living Area'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-cat">Living Area</div>
-            <div class="card-name">Rustic Wooden Dining Table</div>
-            <div class="card-price">₹45,000</div>
-            <div class="card-actions">
-              <button class="btn-move-cart" onclick="LucasCart.add({id:3, name:'Rustic Wooden Dining Table', price:45000, img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="wishlist-card reveal reveal-delay-3">
-          <div class="card-img">
-            <img src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Wooden Candle Holder Set" loading="lazy">
-            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-            <button class="quick-view-btn" onclick="QuickView.open({id:4, name:'Wooden Candle Holder Set', price:'₹5,500', img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-cat">Home Decor</div>
-            <div class="card-name">Wooden Candle Holder Set</div>
-            <div class="card-price">₹5,500</div>
-            <div class="card-actions">
-              <button class="btn-move-cart" onclick="LucasCart.add({id:4, name:'Wooden Candle Holder Set', price:5500, img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="wishlist-card reveal reveal-delay-4">
-          <div class="card-img">
-            <img src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Carved Wooden Frame" loading="lazy">
-            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-            <button class="quick-view-btn" onclick="QuickView.open({id:5, name:'Carved Wooden Frame', price:'₹25,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg', cat:'Home Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-cat">Home Decor</div>
-            <div class="card-name">Carved Wooden Frame</div>
-            <div class="card-price">₹25,000</div>
-            <div class="card-actions">
-              <button class="btn-move-cart" onclick="LucasCart.add({id:5, name:'Carved Wooden Frame', price:25000, img:'images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="wishlist-card reveal reveal-delay-5">
-          <div class="card-img">
-            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Intricate Wall Carving Art" loading="lazy">
-            <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-            <button class="quick-view-btn" onclick="QuickView.open({id:6, name:'Intricate Wall Carving Art', price:'₹18,500', img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg', cat:'Wall Decor'})" title="Quick View"><i class="fa-regular fa-eye"></i></button>
-          </div>
-          <div class="card-body">
-            <div class="card-cat">Wall Decor</div>
-            <div class="card-name">Intricate Wall Carving Art</div>
-            <div class="card-price">₹18,500</div>
-            <div class="card-actions">
-              <button class="btn-move-cart" onclick="LucasCart.add({id:6, name:'Intricate Wall Carving Art', price:18500, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div></div>
-    <div class="wishlist-card">
-      <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Mini Carved Decorative Door" loading="lazy" width="300" height="300">
-        <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Carvings</div>
-        <div class="card-name">Mini Carved Decorative Door</div>
-        <div class="card-price">₹12,000</div>
-        <div class="card-actions">
-          <button class="btn-move-cart" onclick="Toast.success('<strong>Mini Carved Decorative Door</strong> added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-        </div>
-      </div>
     </div>
-    <div class="wishlist-card">
-      <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Rustic Wooden Dining Table" loading="lazy" width="300" height="300">
-        <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Living Area</div>
-        <div class="card-name">Rustic Wooden Dining Table</div>
-        <div class="card-price">₹45,000</div>
-        <div class="card-actions">
-          <button class="btn-move-cart" onclick="Toast.success('<strong>Rustic Wooden Dining Table</strong> added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-        </div>
-      </div>
-    </div>
-    <div class="wishlist-card">
-      <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Wooden Candle Holder Set" loading="lazy" width="300" height="300">
-        <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Home Decor</div>
-        <div class="card-name">Wooden Candle Holder Set</div>
-        <div class="card-price">₹5,500</div>
-        <div class="card-actions">
-          <button class="btn-move-cart" onclick="Toast.success('<strong>Wooden Candle Holder Set</strong> added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-        </div>
-      </div>
-    </div>
-    <div class="wishlist-card">
-      <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Carved Wooden Frame" loading="lazy" width="300" height="300">
-        <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Home Decor</div>
-        <div class="card-name">Carved Wooden Frame</div>
-        <div class="card-price">₹25,000</div>
-        <div class="card-actions">
-          <button class="btn-move-cart" onclick="Toast.success('<strong>Carved Wooden Frame</strong> added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-        </div>
-      </div>
-    </div>
-    <div class="wishlist-card">
-      <div class="card-img"><img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Intricate Wall Carving Art" loading="lazy" width="300" height="300">
-        <button class="remove-wish" onclick="removeWish(this)" title="Remove from Wishlist"><i class="fa-solid fa-heart-crack"></i></button>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Wall Decor</div>
-        <div class="card-name">Intricate Wall Carving Art</div>
-        <div class="card-price">₹18,500</div>
-        <div class="card-actions">
-          <button class="btn-move-cart" onclick="Toast.success('<strong>Intricate Wall Carving Art</strong> added to cart!')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-        </div>
-      </div>
-    </div></div>
-    </div></div>
-<footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col brand-col">
-                    <img src="logo.jpeg" alt="Lucas India" class="footer-logo">
-                    <p>Luxury Economized. We deliver high-quality, handcrafted furniture and premium decor right to your doorstep, with over 30 years of excellence.</p>
-                    <div class="social-links">
-                        <a href="https://facebook.com/lucasindiaindustries" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/lucasindia" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://youtube.com/@lucasindia" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="404.html">About Us</a></li>
-                        <li><a href="404.html">Our Story</a></li>
-                        <li><a href="404.html">Careers</a></li>
-                        <li><a href="404.html">Contact Us</a></li>
-                        <li><a href="404.html">Showroom Locations</a></li>
-                    </ul>
-                </div>
 
-                <div class="footer-col">
-                    <h4>Customer Care</h4>
-                    <ul>
-                        <li><a href="order-status.html">Track Order</a></li>
-                        <li><a href="404.html">Return Policy</a></li>
-                        <li><a href="404.html">Terms & Conditions</a></li>
-                        <li><a href="404.html">Privacy Policy</a></li>
-                        <li><a href="404.html">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col newsletter-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get updates on new arrivals and special offers.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="payment-icons">
-                        <h4>We Accept</h4>
-                        <div class="icons">
-                            <i class="fa-solid fa-credit-card"></i>
-                            <i class="fa-brands fa-cc-mastercard"></i>
-                            <i class="fa-brands fa-cc-visa"></i>
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                    </div>
-                </div>
+    <!-- Wishlist Body -->
+    <div class="wishlist-page">
+        <div class="container container-extra-wide">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;">
+                <div style="color:var(--text-muted);">Showing <strong id="wishCount">6</strong> saved items</div>
+                <button onclick="clearAllWishlist()" style="padding:10px 20px;border:2px solid #dc2626;border-radius:10px;background:none;color:#dc2626;cursor:pointer;font-weight:600;">Clear All</button>
             </div>
             
-            <div class="footer-bottom flex-between">
-                <p>&copy; 2026 Lucas India Industries. All Rights Reserved. Designed by BTen Techno Solutions.</p>
-                <div class="contact-info">
-                    <span><i class="fa-solid fa-phone"></i> +91 83019 11070</span>
-                    <span><i class="fa-solid fa-envelope"></i> order@lucasindia.in</span>
+            <div class="wishlist-grid" id="wishGrid">
+                <!-- Item 1 -->
+                <div class="wishlist-card reveal">
+                    <div class="card-img">
+                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Jesus Panel">
+                        <button class="remove-wish" onclick="removeWish(this)"><i class="fa-solid fa-heart-crack"></i></button>
+                        <button class="quick-view-btn" onclick="QuickView.open({name:'Royal Jesus Panel', price:'₹42,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg'})"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-cat">Exotic Carvings</div>
+                        <div class="card-name">Royal Hand-Carved Jesus Panel</div>
+                        <div class="card-price">₹42,000</div>
+                        <button class="btn-primary" style="width:100%;" onclick="LucasCart.add({name:'Royal Jesus Panel', price:42000, img:'images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    </div>
                 </div>
+                <!-- Item 2 -->
+                <div class="wishlist-card reveal reveal-delay-1">
+                    <div class="card-img">
+                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Decorative Door">
+                        <button class="remove-wish" onclick="removeWish(this)"><i class="fa-solid fa-heart-crack"></i></button>
+                        <button class="quick-view-btn" onclick="QuickView.open({name:'Mini Carved Door', price:'₹12,000', img:'images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg'})"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-cat">Carvings</div>
+                        <div class="card-name">Mini Carved Decorative Door</div>
+                        <div class="card-price">₹12,000</div>
+                        <button class="btn-primary" style="width:100%;" onclick="LucasCart.add({name:'Mini Carved Door', price:12000, img:'images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="wishlist-card reveal reveal-delay-2">
+                    <div class="card-img">
+                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining Table">
+                        <button class="remove-wish" onclick="removeWish(this)"><i class="fa-solid fa-heart-crack"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-cat">Living Area</div>
+                        <div class="card-name">Rustic Wooden Dining Table</div>
+                        <div class="card-price">₹45,000</div>
+                        <button class="btn-primary" style="width:100%;" onclick="LucasCart.add({name:'Rustic Dining Table', price:45000, img:'images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="wishlist-card reveal reveal-delay-3">
+                    <div class="card-img">
+                        <img src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Candle Holder">
+                        <button class="remove-wish" onclick="removeWish(this)"><i class="fa-solid fa-heart-crack"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-cat">Home Decor</div>
+                        <div class="card-name">Wooden Candle Holder Set</div>
+                        <div class="card-price">₹5,500</div>
+                        <button class="btn-primary" style="width:100%;" onclick="LucasCart.add({name:'Candle Holder Set', price:5500, img:'images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="wishlist-card reveal reveal-delay-4">
+                    <div class="card-img">
+                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Wooden Frame">
+                        <button class="remove-wish" onclick="removeWish(this)"><i class="fa-solid fa-heart-crack"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-cat">Home Decor</div>
+                        <div class="card-name">Carved Wooden Frame</div>
+                        <div class="card-price">₹25,000</div>
+                        <button class="btn-primary" style="width:100%;" onclick="LucasCart.add({name:'Carved Wooden Frame', price:25000, img:'images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="wishlist-card reveal reveal-delay-5">
+                    <div class="card-img">
+                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Carving">
+                        <button class="remove-wish" onclick="removeWish(this)"><i class="fa-solid fa-heart-crack"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-cat">Wall Decor</div>
+                        <div class="card-name">Intricate Wall Carving Art</div>
+                        <div class="card-price">₹18,500</div>
+                        <button class="btn-primary" style="width:100%;" onclick="LucasCart.add({name:'Wall Carving Art', price:18500, img:'images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg'})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.jpeg" alt="Lucas India" class="footer-logo">
+                    <p>Handcrafted furniture and premium decor right to your doorstep.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucas India Industries. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Side Cart -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="side-cart" id="sideCart">
         <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">&times;</button></div>
-        <div class="cart-items"><div class="empty-cart-state" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
-            <div class="empty-icon" style="font-size: 3rem; margin-bottom: 20px; color: #eee; transform: rotate(-10deg);"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h4 style="color: var(--text-dark); margin-bottom: 10px;">Your cart is empty</h4>
-            <p style="font-size: 0.9rem; margin-bottom: 25px;">Looks like you haven't added anything to your cart yet.</p>
-            <a href="products.html" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem; border-radius: 50px;">Start Shopping</a>
-        </div></div>
-        <div class="cart-footer"><a href="cart.html" class="btn-primary checkout-btn" style="width:100%;text-align:center;display:block;">View Cart</a></div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <a href="cart.html" class="btn-primary" style="width:100%;display:block;text-align:center;">View Cart</a>
+        </div>
     </div>
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
-    <button id="backToTopBtn" class="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <script src="ui.js"></script><script src="search.js"></script>
+
+    <!-- Scripts -->
+    <script src="ui.js"></script>
+    <script src="search.js"></script>
     <script>
-function removeWish(btn){
-    Modal.confirm("Remove Item?","Are you sure you want to remove this item from your wishlist?",
-        ()=>{
-            btn.closest(".wishlist-card").remove();
-            Toast.success("Removed from wishlist");
-            if(document.getElementById("wishGrid").children.length === 0){
-                document.getElementById("wishGrid").innerHTML = `<div style="text-align:center;padding:60px 20px;grid-column:1/-1;"><i class="fa-regular fa-heart" style="font-size:4rem;color:var(--border-color);display:block;margin-bottom:20px;"></i><h3>Your wishlist is empty</h3><a href="products.html" class="btn-primary" style="display:inline-block;margin-top:16px;">Explore Products</a></div>`;
-            }
-        });
-}
-</script></body></html>
+        function clearAllWishlist() {
+            Modal.confirm('Clear All?', 'Are you sure you want to remove all items?', () => {
+                const grid = document.getElementById('wishGrid');
+                if (grid) {
+                    grid.innerHTML = `
+                        <div style="text-align:center;padding:60px 20px;grid-column: 1 / -1;">
+                            <i class="fa-regular fa-heart" style="font-size:4rem;color:var(--border-color);display:block;margin-bottom:20px;"></i>
+                            <h3>Your wishlist is empty</h3>
+                            <a href="products.html" class="btn-primary" style="display:inline-block;margin-top:16px;padding:12px 28px;">Explore Products</a>
+                        </div>
+                    `;
+                }
+                document.getElementById('wishCount').innerText = '0';
+                Toast.success('Wishlist cleared');
+            });
+        }
+
+        function removeWish(btn) {
+            Modal.confirm("Remove Item?", "Remove this item from your wishlist?", () => {
+                const card = btn.closest(".wishlist-card");
+                card.classList.add('fade-out');
+                setTimeout(() => {
+                    card.remove();
+                    const grid = document.getElementById("wishGrid");
+                    const count = grid.querySelectorAll('.wishlist-card').length;
+                    document.getElementById('wishCount').innerText = count;
+                    if (count === 0) {
+                        grid.innerHTML = `<div style="text-align:center;padding:60px 20px;grid-column:1/-1;"><i class="fa-regular fa-heart" style="font-size:4rem;color:var(--border-color);display:block;margin-bottom:20px;"></i><h3>Your wishlist is empty</h3><a href="products.html" class="btn-primary" style="display:inline-block;margin-top:16px;">Explore Products</a></div>`;
+                    }
+                    Toast.success("Removed from wishlist");
+                }, 300);
+            });
+        }
+    </script>
+</body>
+</html>
