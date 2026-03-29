@@ -154,6 +154,30 @@ const Cart = (() => {
 // ================================================================
 // SCROLL REVEAL (Intersection Observer)
 // ================================================================
+
+// ================================================================
+// SKELETON LOADER SYSTEM
+// ================================================================
+const SkeletonLoader = (() => {
+    function init() {
+        const images = document.querySelectorAll('img:not(.no-skeleton)');
+        images.forEach(img => {
+            if (img.complete) return;
+            const parent = img.parentElement;
+            if (parent && (parent.classList.contains('product-img') || parent.classList.contains('card-img'))) {
+                parent.classList.add('skeleton');
+                img.style.opacity = '0';
+                img.addEventListener('load', () => {
+                    parent.classList.remove('skeleton');
+                    img.style.opacity = '1';
+                    img.classList.add('reveal'); // fade in
+                });
+            }
+        });
+    }
+    return { init };
+})();
+
 const ScrollReveal = (() => {
     function init() {
         const reveals = document.querySelectorAll('.reveal');
@@ -221,6 +245,7 @@ const QuickView = (() => {
 document.addEventListener('DOMContentLoaded', function () {
     // Init Scroll Reveal
     ScrollReveal.init();
+    SkeletonLoader.init();
 
     // Sticky nav
     let _scrolling = false;
