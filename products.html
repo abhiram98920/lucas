@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products | Lucas India Industries – Luxury Economized</title>
     <meta name="description" content="Browse our full collection of premium handcrafted Indian furniture, wood carvings, sculptures, and home decor. Filter by category, price, material, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="products.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Preload Critical Logo -->
+    <link rel="preload" as="image" href="logo.jpeg">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -47,7 +56,7 @@
     <header class="main-header" id="mainHeader">
         <div class="container flex-between align-center">
             <div class="logo">
-                <a href="#"><img src="logo.jpeg" alt="Lucas India Logo"></a>
+                <a href="#"><img src="logo.jpeg" alt="Lucas India Logo" width="180" height="55" decoding="async"></a>
             </div>
             
             <!-- Mobile Toggle -->
@@ -55,9 +64,9 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Search for furniture, decor, and more...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="search-bar" id="siteSearchBar">
+                <input type="text" id="siteSearchInput" placeholder="Search for furniture, decor, and more..." autocomplete="off">
+                <button id="siteSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <div class="user-actions">
@@ -115,7 +124,7 @@
                                 </ul>
                             </div>
                             <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection">
+                                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection">
                                 <br>
                                 <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
                             </div>
@@ -152,7 +161,7 @@
                                 </ul>
                             </div>
                             <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection">
+                                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection">
                                 <br>
                                 <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
                             </div>
@@ -191,7 +200,7 @@
                                 </ul>
                             </div>
                             <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection">
+                                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection">
                                 <br>
                                 <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
                             </div>
@@ -357,10 +366,10 @@
                 <div class="product-listing-grid" id="productGrid">
 
                     <!-- Product Card 1 -->
-                    <div class="listing-card" data-price="12499" data-cat="home-decor" data-rating="4.5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="12499" data-cat="home-decor" data-rating="4.5">
                         <div class="listing-card-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Teak Vase Set" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Teak Vase Set" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View" onclick="openQuickView(0)"><i class="fa-regular fa-eye"></i></button>
@@ -378,10 +387,10 @@
                     </div>
 
                     <!-- Product 2 -->
-                    <div class="listing-card" data-price="28999" data-cat="carvings" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="28999" data-cat="carvings" data-rating="5">
                         <div class="listing-card-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Luxury Wooden Deer Sculptures" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Luxury Wooden Deer Sculptures" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -398,9 +407,9 @@
                     </div>
 
                     <!-- Product 3 -->
-                    <div class="listing-card" data-price="18500" data-cat="wall-art" data-rating="4">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="18500" data-cat="wall-art" data-rating="4">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Intricate Wall Carving Art" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Intricate Wall Carving Art" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -417,10 +426,10 @@
                     </div>
 
                     <!-- Product 4 -->
-                    <div class="listing-card" data-price="45000" data-cat="living-room" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="45000" data-cat="living-room" data-rating="5">
                         <div class="listing-card-img">
                             <span class="badge new">New</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Rustic Wooden Table" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Rustic Wooden Table" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -437,9 +446,9 @@
                     </div>
 
                     <!-- Product 5 -->
-                    <div class="listing-card" data-price="22000" data-cat="sculptures" data-rating="4.5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="22000" data-cat="sculptures" data-rating="4.5">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Spiritual Collection Set" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Spiritual Collection Set" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -456,10 +465,10 @@
                     </div>
 
                     <!-- Product 6 -->
-                    <div class="listing-card" data-price="65000" data-cat="carvings" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="65000" data-cat="carvings" data-rating="5">
                         <div class="listing-card-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Royal Carved Panel" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Royal Carved Panel" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -476,9 +485,9 @@
                     </div>
 
                     <!-- Product 7 -->
-                    <div class="listing-card" data-price="35000" data-cat="living-room" data-rating="4.5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="35000" data-cat="living-room" data-rating="4.5">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Classic Velvet Couch" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Classic Velvet Couch" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -495,10 +504,10 @@
                     </div>
 
                     <!-- Product 8 -->
-                    <div class="listing-card" data-price="9500" data-cat="sculptures" data-rating="4.5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="9500" data-cat="sculptures" data-rating="4.5">
                         <div class="listing-card-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Hand-Carved Figurine" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Hand-Carved Figurine" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -516,9 +525,9 @@
                     </div>
 
                     <!-- Product 9 -->
-                    <div class="listing-card" data-price="7200" data-cat="kitchen" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="7200" data-cat="kitchen" data-rating="5">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Artisan Wooden Bowl Set" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Artisan Wooden Bowl Set" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -535,10 +544,10 @@
                     </div>
 
                     <!-- Product 10 -->
-                    <div class="listing-card" data-price="38000" data-cat="home-decor" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="38000" data-cat="home-decor" data-rating="5">
                         <div class="listing-card-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg" alt="Hand-Carved Wooden Chest" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg" alt="Hand-Carved Wooden Chest" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -555,10 +564,10 @@
                     </div>
 
                     <!-- Product 11 -->
-                    <div class="listing-card" data-price="16000" data-cat="wall-art" data-rating="4">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="16000" data-cat="wall-art" data-rating="4">
                         <div class="listing-card-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg" alt="Traditional Carved Panel" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg" alt="Traditional Carved Panel" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -576,9 +585,9 @@
                     </div>
 
                     <!-- Product 12 -->
-                    <div class="listing-card" data-price="25000" data-cat="home-decor" data-rating="4">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="25000" data-cat="home-decor" data-rating="4">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Carved Wooden Frame" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.16.jpeg" alt="Carved Wooden Frame" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -595,10 +604,10 @@
                     </div>
 
                     <!-- Product 13 -->
-                    <div class="listing-card" data-price="55000" data-cat="bedroom" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="55000" data-cat="bedroom" data-rating="5">
                         <div class="listing-card-img">
                             <span class="badge new">New</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.23.jpeg" alt="Sheesham Bed Frame" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.23.jpeg" alt="Sheesham Bed Frame" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -615,10 +624,10 @@
                     </div>
 
                     <!-- Product 14 -->
-                    <div class="listing-card" data-price="14000" data-cat="dining" data-rating="4">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="14000" data-cat="dining" data-rating="4">
                         <div class="listing-card-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.26.jpeg" alt="Wooden Dining Chairs" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.26.jpeg" alt="Wooden Dining Chairs" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -636,9 +645,9 @@
                     </div>
 
                     <!-- Product 15 -->
-                    <div class="listing-card" data-price="8500" data-cat="home-decor" data-rating="5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="8500" data-cat="home-decor" data-rating="5">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.27.jpeg" alt="Decorative Wooden Tray" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.27.jpeg" alt="Decorative Wooden Tray" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -655,10 +664,10 @@
                     </div>
 
                     <!-- Product 16 -->
-                    <div class="listing-card" data-price="42000" data-cat="living-room" data-rating="4.5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="42000" data-cat="living-room" data-rating="4.5">
                         <div class="listing-card-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Carved Wood Wall Art" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Carved Wood Wall Art" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -675,9 +684,9 @@
                     </div>
 
                     <!-- Product 17 -->
-                    <div class="listing-card" data-price="5500" data-cat="home-decor" data-rating="4">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="5500" data-cat="home-decor" data-rating="4">
                         <div class="listing-card-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Wooden Candle Holder" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.15.55.jpeg" alt="Wooden Candle Holder" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -694,10 +703,10 @@
                     </div>
 
                     <!-- Product 18 -->
-                    <div class="listing-card" data-price="12000" data-cat="carvings" data-rating="4.5">
+                    <div class="listing-card" onclick="window.location=\'product.html\'" style="cursor:pointer;" style="cursor:pointer;" onclick="window.location='product.html'" data-price="12000" data-cat="carvings" data-rating="4.5">
                         <div class="listing-card-img">
                             <span class="badge new">New</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Small Carved Wooden Door" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.12.jpeg" alt="Small Carved Wooden Door" loading="lazy">
                             <div class="listing-card-actions">
                                 <button class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
                                 <button class="action-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -807,7 +816,7 @@
         </div>
         <div class="cart-items">
             <div class="cart-item">
-                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
+                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
                 <div class="item-info">
                     <h4>Luxury Teak Vase</h4>
                     <p class="price">₹12,499</p>
@@ -820,7 +829,7 @@
                 <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="cart-item">
-                <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Item">
+                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Item">
                 <div class="item-info">
                     <h4>Wall Decor Carving</h4>
                     <p class="price">₹18,500</p>
@@ -843,14 +852,21 @@
     </div>
     <!-- Products Page Scripts -->
     <script>
-        // Sticky Nav
+        // Sticky Nav with requestAnimationFrame for smooth scroll performance
+        let isScrolling = false;
         window.addEventListener('scroll', function() {
-            const nav = document.getElementById('mainNav');
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 150) {
-                if(window.innerWidth > 1024) { nav.classList.add('sticky'); header.classList.remove('sticky-mobile'); }
-                else { nav.classList.remove('sticky'); header.classList.add('sticky-mobile'); }
-            } else { nav.classList.remove('sticky'); header.classList.remove('sticky-mobile'); }
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    const nav = document.getElementById('mainNav');
+                    const header = document.getElementById('mainHeader');
+                    if (window.scrollY > 150) {
+                        if(window.innerWidth > 1024) { nav.classList.add('sticky'); header.classList.remove('sticky-mobile'); }
+                        else { nav.classList.remove('sticky'); header.classList.add('sticky-mobile'); }
+                    } else { nav.classList.remove('sticky'); header.classList.remove('sticky-mobile'); }
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
         });
 
         // Side Cart
@@ -929,13 +945,22 @@
             cards.forEach(c => grid.appendChild(c));
         });
 
-        // URL param detection
+        // URL param detection — search + category
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('cat');
+        const searchQ = params.get('search');
         if(cat) {
             const titles = { 'offer':'Offer Zone','new-arrivals':'New Arrivals','premium':'Premium Collection','bedroom':'Bedroom Furniture','dining':'Dining','living':'Living Room','home-decor':'Home Decor','carvings':'Wood Carvings' };
             if(titles[cat]) { document.getElementById('pageTitle').textContent = titles[cat]; document.getElementById('breadcrumbCat').textContent = titles[cat]; }
         }
+        if(searchQ) {
+            document.getElementById('pageTitle').textContent = 'Search: "' + searchQ + '"';
+            document.getElementById('breadcrumbCat').textContent = 'Search Results';
+            document.getElementById('siteSearchInput').value = searchQ;
+        }
     </script>
+
+    <!-- Live Search -->
+    <script src="search.js"></script>
 </body>
 </html>

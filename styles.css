@@ -1,8 +1,3 @@
-/* 
-    Lucas India Industries - E-commerce Stylesheet
-    Luxury Economized
-*/
-
 :root {
     --primary-color: #2b2b2b; /* Dark charcoal */
     --accent-color: #c1121f; /* Primary Brand Red */
@@ -14,6 +9,10 @@
     --border-color: #e5e5e5;
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -1896,4 +1895,13 @@ ul {
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(193,18,31,0.12);
     outline: none;
+}
+/* ✨ Performance: Content Visibility for off-screen sections */
+section, .products-page-layout, .main-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+}
+/* Ensure hero is always visible immediately */
+.hero-banners, .main-header, .main-nav, .top-offer-bar, .top-sub-menu {
+    content-visibility: visible !important;
 }

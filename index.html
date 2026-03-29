@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas India Industries | Luxury Economized</title>
     <meta name="description" content="Lucas India Industries - High-performance e-commerce platform for modern furniture and luxury lifestyle products.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload Critical Hero Images -->
+    <link rel="preload" as="image" href="logo.jpeg">
+    <link rel="preload" as="image" href="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg">
+    <link rel="preload" as="image" href="images/WhatsApp Image 2026-03-26 at 21.16.20 (1).jpeg">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,7 +56,7 @@
     <header class="main-header" id="mainHeader">
         <div class="container flex-between align-center">
             <div class="logo">
-                <a href="#"><img src="logo.jpeg" alt="Lucas India Logo"></a>
+                <a href="#"><img src="logo.jpeg" alt="Lucas India Logo" width="180" height="55" decoding="async"></a>
             </div>
             
             <!-- Mobile Toggle -->
@@ -52,9 +64,9 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Search for furniture, decor, and more...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="search-bar" id="siteSearchBar">
+                <input type="text" id="siteSearchInput" placeholder="Search for furniture, decor, and more..." autocomplete="off">
+                <button id="siteSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <div class="user-actions">
@@ -112,7 +124,7 @@
                                 </ul>
                             </div>
                             <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Bedroom collection" loading="lazy" decoding="async" width="280" height="180">
                                 <br>
                                 <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
                             </div>
@@ -149,7 +161,7 @@
                                 </ul>
                             </div>
                             <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Dining collection" loading="lazy" decoding="async" width="280" height="180">
                                 <br>
                                 <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
                             </div>
@@ -188,7 +200,7 @@
                                 </ul>
                             </div>
                             <div class="mega-image-column">
-                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection">
+                                <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Living collection" loading="lazy" decoding="async" width="280" height="180">
                                 <br>
                                 <a href="#" class="btn-primary" style="margin-top:10px; width:100%; text-align:center; padding:8px;">Shop Collection</a>
                             </div>
@@ -285,9 +297,9 @@
     <section class="flash-sale-banner">
         <!-- Optional CSS Particle Effect Background -->
         <div class="particle-bg"></div>
-        <img src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" class="floating-img float-1" alt="Decor">
-        <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" class="floating-img float-2" alt="Wood Carving">
-        <img src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" class="floating-img float-3" alt="Idol">
+        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" class="floating-img float-1" alt="Decor">
+        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" class="floating-img float-2" alt="Wood Carving">
+        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" class="floating-img float-3" alt="Idol">
         <div class="container container-extra-wide" style="position: relative; z-index: 2;">
             <div class="flash-content flex-between align-center">
                 <div class="flash-text">
@@ -361,23 +373,23 @@
                 <button class="carousel-arrow next" onclick="scrollCarousel(this, 350)"><i class="fa-solid fa-chevron-right"></i></button>
                 <div class="category-grid">
                     <a href="#" class="category-card">
-                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Living Room">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Living Room">
                         <div class="cat-overlay"><h3>Living Room</h3></div>
                     </a>
                     <a href="#" class="category-card">
-                        <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Outdoors">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Outdoors">
                         <div class="cat-overlay"><h3>Outdoors</h3></div>
                     </a>
                     <a href="#" class="category-card">
-                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Decor Carvings">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Decor Carvings">
                         <div class="cat-overlay"><h3>Decor Carvings</h3></div>
                     </a>
                     <a href="#" class="category-card">
-                        <img src="images/WhatsApp Image 2026-03-26 at 21.15.49.jpeg" alt="Premium Artifacts">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.49.jpeg" alt="Premium Artifacts">
                         <div class="cat-overlay"><h3>Premium Artifacts</h3></div>
                     </a>
                     <a href="#" class="category-card">
-                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
                         <div class="cat-overlay"><h3>Wall Decor</h3></div>
                     </a>
                 </div>
@@ -400,7 +412,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Vases">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Handcrafted Vases">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -414,7 +426,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -427,7 +439,7 @@
                     <!-- Product 3 -->
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -441,7 +453,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge new">New</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -455,7 +467,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Carved Figurine" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.17.jpeg" alt="Carved Figurine" loading="lazy">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -468,7 +480,7 @@
                     <!-- Product 6 -->
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Wooden Bowl Set" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.22.jpeg" alt="Wooden Bowl Set" loading="lazy">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -496,7 +508,7 @@
                 <div class="product-carousel-track">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Spiritual">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.21.jpeg" alt="Spiritual">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -509,7 +521,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Carved Door">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.35.jpeg" alt="Carved Door">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -521,7 +533,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Teak Vases">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.52.jpeg" alt="Teak Vases">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -534,7 +546,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wall Decor">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -562,7 +574,7 @@
                 <div class="product-carousel-track">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Sofaset">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Sofaset">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -576,7 +588,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.15.53.jpeg" alt="Wooden Deer Sculptures">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -588,7 +600,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
+                            <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Wood Carving Art">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -601,7 +613,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge new">New</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.13.jpeg" alt="Decorative Table" loading="lazy">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -615,7 +627,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge premium">Premium</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg" alt="Carved Chest" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.24.jpeg" alt="Carved Chest" loading="lazy">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -628,7 +640,7 @@
                     <div class="product-card">
                         <div class="product-img">
                             <span class="badge sale">Offer</span>
-                            <img src="images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg" alt="Carved Panel" loading="lazy">
+                            <img width="400" height="400" decoding="async" src="images/WhatsApp Image 2026-03-26 at 21.16.19.jpeg" alt="Carved Panel" loading="lazy">
                             <div class="product-actions"><button class="action-btn"><i class="fa-regular fa-heart"></i></button><button class="action-btn cart-btn"><i class="fa-solid fa-cart-plus"></i></button></div>
                         </div>
                         <div class="product-info">
@@ -653,7 +665,7 @@
                     <a href="#" class="btn-primary" style="display:inline-block; margin-top: 15px;">Book a Design Expert <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="expert-image">
-                    <img src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Lucas Design Expert">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.20.jpeg" alt="Lucas Design Expert">
                     <div class="expert-badge">
                         <i class="fa-solid fa-medal"></i>
                         <span>certified<br>professionals</span>
@@ -676,7 +688,7 @@
                     <span class="quote-mark">“</span>
                     <p>The quality of the teak wood dining set I received is absolutely phenomenal. It has completely transformed my dining area.</p>
                     <div class="testi-author">
-                        <img src="images/pexel-solliefoto-298863.jpg" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" alt="Ananya S.">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/pexel-solliefoto-298863.jpg" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" alt="Ananya S.">
                         <div class="author-details">
                             <strong>Ananya Sharma</strong>
                             <span>Mumbai, Maharashtra</span>
@@ -687,7 +699,7 @@
                     <span class="quote-mark">“</span>
                     <p>I booked a design expert to customize a wall carving. They understood my vision perfectly and the final piece is a masterpiece.</p>
                     <div class="testi-author">
-                        <img src="images/WhatsApp Image 2026-03-26 at 21.16.18 (1).jpeg" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'" alt="Rahul M.">
+                        <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.18 (1).jpeg" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'" alt="Rahul M.">
                         <div class="author-details">
                             <strong>Rahul Verma</strong>
                             <span>Bangalore, Karnataka</span>
@@ -703,14 +715,14 @@
         <div class="container container-extra-wide">
             <div class="crafted-grid">
                 <a href="#" class="crafted-banner">
-                    <img src="images/WhatsApp Image 2026-03-26 at 21.16.14.jpeg" alt="Mudramark Heirloom Pieces">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.14.jpeg" alt="Mudramark Heirloom Pieces">
                     <div class="crafted-text">
                         <h3>Crafted In India</h3>
                         <p>Bringing old-world charm to modern homes</p>
                     </div>
                 </a>
                 <a href="#" class="crafted-banner">
-                    <img src="images/WhatsApp Image 2026-03-26 at 21.16.15.jpeg" alt="Amberville Old World Charm">
+                    <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.15.jpeg" alt="Amberville Old World Charm">
                     <div class="crafted-text">
                         <h3>Premium Materials</h3>
                         <p>Hand-selected wood for ultimate durability</p>
@@ -803,7 +815,7 @@
         </div>
         <div class="cart-items">
             <div class="cart-item">
-                <img src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
+                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.25.jpeg" alt="Item">
                 <div class="item-info">
                     <h4>Luxury Teak Vase</h4>
                     <p class="price">₹12,499</p>
@@ -816,7 +828,7 @@
                 <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
             </div>
             <div class="cart-item">
-                <img src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Item">
+                <img width="400" height="400" decoding="async" loading="lazy" src="images/WhatsApp Image 2026-03-26 at 21.16.11.jpeg" alt="Item">
                 <div class="item-info">
                     <h4>Wall Decor Carving</h4>
                     <p class="price">₹18,500</p>
@@ -840,22 +852,29 @@
 
     <!-- UI Interaction Scripts -->
     <script>
-        // Sticky Nav
+        // Sticky Nav with requestAnimationFrame for smooth scroll performance
+        let isScrolling = false;
         window.addEventListener('scroll', function() {
-            const nav = document.getElementById('mainNav');
-            const header = document.getElementById('mainHeader');
-            
-            if (window.scrollY > 150) {
-                if(window.innerWidth > 1024) {
-                    nav.classList.add('sticky');
-                    header.classList.remove('sticky-mobile');
-                } else {
-                    nav.classList.remove('sticky');
-                    header.classList.add('sticky-mobile');
-                }
-            } else {
-                nav.classList.remove('sticky');
-                header.classList.remove('sticky-mobile');
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    const nav = document.getElementById('mainNav');
+                    const header = document.getElementById('mainHeader');
+                    
+                    if (window.scrollY > 150) {
+                        if(window.innerWidth > 1024) {
+                            nav.classList.add('sticky');
+                            header.classList.remove('sticky-mobile');
+                        } else {
+                            nav.classList.remove('sticky');
+                            header.classList.add('sticky-mobile');
+                        }
+                    } else {
+                        nav.classList.remove('sticky');
+                        header.classList.remove('sticky-mobile');
+                    }
+                    isScrolling = false;
+                });
+                isScrolling = true;
             }
         });
 
@@ -1017,5 +1036,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
+
+    <!-- Live Search -->
+    <script src="search.js"></script>
 </body>
 </html>
