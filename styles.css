@@ -1943,3 +1943,5 @@ section, .products-page-layout, .main-footer {
     background: var(--accent-color);
     color: #fff;
 }
+
+.product-card:hover .price { color: var(--accent-hover); transform: scale(1.05); display: inline-block; transition: all 0.3s ease; }
