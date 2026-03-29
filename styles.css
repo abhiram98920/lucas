@@ -165,7 +165,10 @@ ul {
 .top-offer-bar {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 8px 0;
+    padding: 10px 0;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -1592,6 +1595,18 @@ ul {
     transition: var(--transition);
 }
 
+@media (max-width: 768px) {
+    .whatsapp-widget {
+        bottom: 25px; /* Back to normal bottom but on the LEFT */
+        right: auto;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+        z-index: 1001; /* Above any other floating elements */
+    }
+}
+
 .whatsapp-widget:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
@@ -1641,6 +1656,18 @@ ul {
     
     /* Side Menu Styling */
     .desktop-hide { display: flex; }
+    
+    @media (max-width: 768px) {
+        .main-header .container {
+            padding: 10px 15px !important;
+        }
+        .logo img {
+            height: 35px !important;
+        }
+        .header-actions {
+            gap: 12px !important;
+        }
+    }
     
     .mobile-nav-head {
         display: flex;
@@ -1706,23 +1733,34 @@ ul {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        gap: 15px;
-        padding-bottom: 10px;
+        gap: 10px;
+        padding-bottom: 20px;
         height: auto;
+        -webkit-overflow-scrolling: touch;
     }
-    .hero-grid-3::-webkit-scrollbar { height: 0; }
+    .hero-grid-3::-webkit-scrollbar { display: none; }
     .hero-grid-3 > .slider-container { 
-        height: 380px; 
-        min-width: 88vw;
+        height: 340px; 
+        min-width: 90vw;
         flex-shrink: 0;
         scroll-snap-align: center;
     }
-    /* Override the grid-row span so first slider doesn't dominate on mobile */
-    .hero-grid-3 > .slider-container:nth-child(1) {
-        grid-row: unset;
+    /* Hide slider arrows on mobile to prevent overlap */
+    .slider-btn { display: none !important; }
+    
+    .banner-content {
+        padding: 0 25px !important;
+    }
+    .banner-content h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 8px !important;
+    }
+    .banner-content p {
+        font-size: 0.95rem !important;
+        margin-bottom: 15px !important;
     }
     .hero-banners {
-        padding-top: 0 !important;
+        padding-top: 10px !important;
     }
 }
 
@@ -1818,11 +1856,13 @@ ul {
 
 /* Hide horizontal scrollbar on carousels (native scroll behavior) */
 .category-grid::-webkit-scrollbar,
-.product-carousel-track::-webkit-scrollbar {
+.product-carousel-track::-webkit-scrollbar,
+.hero-grid-3::-webkit-scrollbar {
     display: none;
 }
 .category-grid,
-.product-carousel-track {
+.product-carousel-track,
+.hero-grid-3 {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -1831,9 +1871,9 @@ ul {
 .back-to-top {
     position: fixed;
     bottom: 140px;
-    right: 30px;
-    width: 46px;
-    height: 46px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     background: var(--accent-color);
     color: #fff;
     border: none;
@@ -1844,6 +1884,14 @@ ul {
     justify-content: center;
     box-shadow: 0 4px 15px rgba(193,18,31,0.4);
     z-index: 999;
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 90px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+    }
+}
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;

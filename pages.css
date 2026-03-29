@@ -41,8 +41,9 @@
 .cart-table-wrap {
     background: #fff;
     border-radius: 16px;
-    overflow: hidden;
+    overflow-x: auto;
     box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    -webkit-overflow-scrolling: touch;
 }
 .cart-table { width: 100%; border-collapse: collapse; }
 .cart-table thead { background: var(--bg-light); }
@@ -481,15 +482,29 @@
    ================================================================ */
 @media (max-width: 900px) {
     .cart-grid, .checkout-grid { grid-template-columns: 1fr; }
-    .order-summary-box { position: static; }
+    .order-summary-box { position: static; margin-top: 20px; }
     .profile-layout { grid-template-columns: 1fr; }
     .profile-sidebar { position: static; }
     .form-grid { grid-template-columns: 1fr; }
     .order-details-grid { grid-template-columns: 1fr; }
     .auth-card { padding: 36px 26px; }
 }
+
 @media (max-width: 600px) {
-    .cart-table th:nth-child(3), .cart-table td:nth-child(3) { display: none; }
+    .cart-table th, .cart-table td { padding: 12px 10px; font-size: 0.85rem; }
+    .cart-item-img { width: 60px; height: 60px; }
+    .cart-item-detail .item-name { font-size: 0.85rem; }
+    .cart-qty-control button { width: 28px; height: 28px; }
+    .cart-qty-control span { width: 30px; font-size: 0.8rem; }
     .social-login-btns { flex-direction: column; }
     .success-actions { flex-direction: column; }
+    
+    /* Optional: Stack table on very small screens */
+    .cart-table thead { display: none; }
+    .cart-table tr { display: block; border-bottom: 2px solid var(--border-color); padding: 15px 0; }
+    .cart-table td { display: flex; justify-content: space-between; align-items: center; border: none; padding: 8px 20px; text-align: right; }
+    .cart-table td::before { content: attr(data-label); font-weight: 700; text-align: left; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); }
+    .cart-table td:first-child { display: block; text-align: left; padding-bottom: 15px; }
+    .cart-table td:first-child::before { display: block; margin-bottom: 10px; }
+    .cart-item-cell { flex-direction: row; text-align: left; }
 }

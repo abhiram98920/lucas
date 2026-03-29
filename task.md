@@ -1,0 +1,13 @@
+- [x] Update `cart.html`
+    - [x] Standardize header (offer bar, sub-menu, main header, mega-menu)
+    - [x] Clean up cart section (duplicated labels, side-cart fix)
+    - [x] Standardize footer
+    - [x] Fix Side Cart code duplication
+- [x] Update `wishlist.html`
+    - [x] Standardize header (offer bar, sub-menu, main header, mega-menu)
+    - [x] Standardize footer
+- [x] Update `pages.css`
+    - [x] Add mobile responsiveness rules for cart table
+- [x] Verification
+    - [x] Verify cart functionality
+    - [x] Verify mobile layout
