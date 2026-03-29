@@ -1320,25 +1320,6 @@ ul {
     line-height: 1.4;
 }
 
-.testi-carousel-container {
-    flex: 1;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.testi-carousel-container::-webkit-scrollbar {
-    display: none;
-}
-
-.testi-slider-wrapper {
-    display: flex;
-    gap: 25px;
-    padding: 10px 0;
-}
-
 .testi-modern-card {
     flex: 0 0 450px;
     scroll-snap-align: start;
@@ -1351,6 +1332,7 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.4s ease;
+    margin: 10px 0; /* Slight vertical breathing room */
 }
 
 .testi-modern-card:hover {
